@@ -40,4 +40,8 @@ public class HighCardDealer implements Dealer {
     public void emptyHand() {
         hand.clear();
     }
+
+    public Card revealSingleCard() {
+        return hand.get(0);
+    }
 }

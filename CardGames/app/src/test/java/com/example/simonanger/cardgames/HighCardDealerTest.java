@@ -61,4 +61,12 @@ public class HighCardDealerTest {
         assertEquals(0, highCardDealer.getHand().size());
     }
 
+    @Test
+    public void testRevealSingleCard() {
+        highCardDealer.getCard(card1);
+        Card singleCard = highCardDealer.revealSingleCard();
+        assertEquals(Rank.SEVEN, singleCard.getRank());
+    }
+
+
 }

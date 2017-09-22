@@ -6,38 +6,39 @@ package com.example.simonanger.cardgames;
 
 public class HighCardGame {
     Deck deck;
-    Dealer dealer;
+    HighCardDealer highCardDealer;
     Player player;
 
-    public HighCardGame(Deck deck, Dealer dealer, Player player) {
+    public HighCardGame(Deck deck, HighCardDealer highCardDealer, Player player) {
         this.deck = deck;
-        this.dealer = dealer;
+        deck.generate();
+        this.highCardDealer = highCardDealer;
         this.player = player;
     }
 
-    public Deck getDeck() {
-        return deck;
+    public int play() {
+        Card playerCard = highCardDealer.deal();
+        player.getCard(playerCard);
+        Card dealerCard = highCardDealer.deal();
+        highCardDealer.getCard(dealerCard);
+
+        int playerCardValue = player.revealSingleCard().getRankNumerically();
+        int dealerCardValue = highCardDealer.revealSingleCard().getRankNumerically();
+
+        if (playerCardValue == 0) {
+            return 0;
+        }
+
+        if (playerCardValue > dealerCardValue) {
+            return 1;
+        }
+
+        if (playerCardValue <= dealerCardValue) {
+            return 2;
+        }
+
+        return -1;
     }
 
-    public Dealer getDealer() {
-        return dealer;
-    }
 
-    public Player getPlayer() {
-        return player;
-    }
-}
-//
-//
-//    private Player getWinner() {
-//        int highestValue = Integer.MIN_VALUE;
-//        Player winner = null;
-//
-//        for (Player player: players) {
-//            int currentValue = player.getCard().getValue();
-//            if (currentValue > highestValue) {
-//                highestValue = currentValue;
-//                winner = player;
-//            }
-//        }
-//        return winner;
+}    }

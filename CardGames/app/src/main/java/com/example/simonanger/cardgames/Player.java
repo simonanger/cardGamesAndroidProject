@@ -34,4 +34,9 @@ public class Player {
     public void emptyHand() {
         hand.clear();
     }
+
+    public Card revealSingleCard() {
+        return hand.get(0);
+    }
+
 }

@@ -51,4 +51,12 @@ public class PlayerTest {
         assertEquals(0, player.getHand().size());
     }
 
+    @Test
+    public void testRevealSingleCard() {
+        player.getCard(card1);
+        Card singleCard = player.revealSingleCard();
+        assertEquals(Rank.FIVE, singleCard.getRank());
+    }
+
+
 }
