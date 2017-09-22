@@ -15,6 +15,6 @@ public class HighCardGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_card_game);
 
-        game = new HighCardGame(deck, dealer, player);
+//        game = new HighCardGame(deck, dealer, player);
     }
 }

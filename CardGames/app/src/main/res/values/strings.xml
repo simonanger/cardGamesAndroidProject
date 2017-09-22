@@ -3,4 +3,8 @@
     <string name="welcome">Welcome to the games room!</string>
     <string name="highCard">Play Game</string>
     <string name="title">Welcome to the games room!</string>
+    <string name="dealer">Dealers card</string>
+    <string name="player">Your Card</string>
+    <string name="high_card_draw_button">Draw</string>
+    <string name="reset_deck_button">Reset Deck</string>
 </resources>
