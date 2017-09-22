@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CardGames</string>
+    <string name="app_name">Card Games</string>
     <string name="welcome">Welcome to the games room!</string>
     <string name="highCard">Play Game</string>
     <string name="title">Welcome to the games room!</string>
