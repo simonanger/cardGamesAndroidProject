@@ -39,7 +39,7 @@ public class DeckTest {
     }
 
     @Test
-    public void testDeckGenerate() {
+    public void testGenerateDeck() {
         deck.generate();
         assertEquals(52, deck.getCards().size());
     }

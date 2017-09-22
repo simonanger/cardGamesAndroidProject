@@ -1,22 +1,28 @@
 package com.example.simonanger.cardgames;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by simonanger on 22/09/2017.
  */
 
-public class Player {
-    private String name;
+public class HighCardDealer implements Dealer {
+    Deck deck;
+    Random random;
     ArrayList<Card> hand;
 
-    public Player(String name) {
-        this.name = name;
+    public HighCardDealer(Deck deck){
+        this.deck = deck;
+        this.random = new Random();
         this.hand = new ArrayList<>();
     }
 
-    public String getName() {
-        return name;
+    public Card deal(){
+        int randomIndex = this.random.nextInt(this.deck.getCards().size());
+
+        Card randomCard = this.deck.getCards().remove(randomIndex);
+        return randomCard;
     }
 
     public ArrayList getHand() {
