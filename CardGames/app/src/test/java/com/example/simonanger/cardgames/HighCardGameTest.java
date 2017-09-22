@@ -25,9 +25,9 @@ public class HighCardGameTest {
     }
 
     // This tests if the game method works as random, ran multiple times to see if the random works.
-//    @Test
-//    public void testGamesPlays() {
+    @Test
+    public void testGamesPlays() {
 //        assertEquals(0, highCardGame.play());
-//    }
+    }
 
 }
