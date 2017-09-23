@@ -66,114 +66,141 @@ public class HighCardGameActivity extends AppCompatActivity {
     }
 
     public void onHighCardDrawButtonClicked (View Button) {
-
-        int result = game.play();
-
-        String winnerMessage;
-
-        switch (result) {
-            case 0:
-                winnerMessage = "Error"; break;
-            case 1:
-                winnerMessage = "You win!"; break;
-            case 2:
-                winnerMessage = "Dealer wins! Better luck next time."; break;
-            default:
-                winnerMessage = "Error";
-        }
-
-        String playerCardSuit = player.revealSingleCard().getSuit().toString().toLowerCase();
-        String playerCardRank = player.revealSingleCard().getRank().toString().toLowerCase();
-
-        String dealerCardSuit = dealer.revealSingleCard().getSuit().toString().toLowerCase();
-        String dealerCardRank = dealer.revealSingleCard().getRank().toString().toLowerCase();
-
-        String resultMessage = "You had the " + playerCardRank + " of " + playerCardSuit
-                + ". \n The dealer had the " + dealerCardRank + " of " + dealerCardSuit + ". \n"
-                + winnerMessage;
-
-        resultTextView.setText(resultMessage);
-
         if (deck.getCards().size() == 0) {
             resultTextView.setText("The deck is now empty, press the reset button to reshuffle");
         }
+        else {
+            int result = game.play();
 
-        switch (player.revealSingleCard().getSuit()) {
-            case SPADES:
-                playersCardImage.setImageResource(R.drawable.spades); break;
-            case CLUBS:
-                playersCardImage.setImageResource(R.drawable.clubs); break;
-            case DIAMONDS:
-                playersCardImage.setImageResource(R.drawable.diamonds); break;
-            case HEARTS:
-                playersCardImage.setImageResource(R.drawable.hearts); break;
+            String winnerMessage;
+
+            switch (result) {
+                case 0:
+                    winnerMessage = "Error";
+                    break;
+                case 1:
+                    winnerMessage = "You win!";
+                    break;
+                case 2:
+                    winnerMessage = "Dealer wins! Better luck next time.";
+                    break;
+                default:
+                    winnerMessage = "Error";
+            }
+
+            String playerCardSuit = player.revealSingleCard().getSuit().toString().toLowerCase();
+            String playerCardRank = player.revealSingleCard().getRank().toString().toLowerCase();
+
+            String dealerCardSuit = dealer.revealSingleCard().getSuit().toString().toLowerCase();
+            String dealerCardRank = dealer.revealSingleCard().getRank().toString().toLowerCase();
+
+            String resultMessage = "You had the " + playerCardRank + " of " + playerCardSuit
+                    + ". \n The dealer had the " + dealerCardRank + " of " + dealerCardSuit + ". \n"
+                    + winnerMessage;
+
+            resultTextView.setText(resultMessage);
+
+            switch (player.revealSingleCard().getSuit()) {
+                case SPADES:
+                    playersCardImage.setImageResource(R.drawable.spades);
+                    break;
+                case CLUBS:
+                    playersCardImage.setImageResource(R.drawable.clubs);
+                    break;
+                case DIAMONDS:
+                    playersCardImage.setImageResource(R.drawable.diamonds);
+                    break;
+                case HEARTS:
+                    playersCardImage.setImageResource(R.drawable.hearts);
+                    break;
+            }
+
+            switch (dealer.revealSingleCard().getSuit()) {
+                case SPADES:
+                    dealersCardImage.setImageResource(R.drawable.spades);
+                    break;
+                case CLUBS:
+                    dealersCardImage.setImageResource(R.drawable.clubs);
+                    break;
+                case DIAMONDS:
+                    dealersCardImage.setImageResource(R.drawable.diamonds);
+                    break;
+                case HEARTS:
+                    dealersCardImage.setImageResource(R.drawable.hearts);
+                    break;
+            }
+
+            switch (player.revealSingleCard().getRankNumerically()) {
+                case 1:
+                    playerCardRankTextViewUp.setText("A");
+                    break;
+                case 11:
+                    playerCardRankTextViewUp.setText("J");
+                    break;
+                case 12:
+                    playerCardRankTextViewUp.setText("Q");
+                    break;
+                case 13:
+                    playerCardRankTextViewUp.setText("K");
+                    break;
+                default:
+                    playerCardRankTextViewUp.setText(String.valueOf(player.revealSingleCard().getRankNumerically()));
+            }
+
+            switch (player.revealSingleCard().getRankNumerically()) {
+                case 1:
+                    playerCardRankTextViewDown.setText("A");
+                    break;
+                case 11:
+                    playerCardRankTextViewDown.setText("J");
+                    break;
+                case 12:
+                    playerCardRankTextViewDown.setText("Q");
+                    break;
+                case 13:
+                    playerCardRankTextViewDown.setText("K");
+                    break;
+                default:
+                    playerCardRankTextViewDown.setText(String.valueOf(player.revealSingleCard().getRankNumerically()));
+            }
+
+            switch (dealer.revealSingleCard().getRankNumerically()) {
+                case 1:
+                    dealerCardRankTextViewUp.setText("A");
+                    break;
+                case 11:
+                    dealerCardRankTextViewUp.setText("J");
+                    break;
+                case 12:
+                    dealerCardRankTextViewUp.setText("Q");
+                    break;
+                case 13:
+                    dealerCardRankTextViewUp.setText("K");
+                    break;
+                default:
+                    dealerCardRankTextViewUp.setText(String.valueOf(dealer.revealSingleCard().getRankNumerically()));
+            }
+
+            switch (dealer.revealSingleCard().getRankNumerically()) {
+                case 1:
+                    dealerCardRankTextViewDown.setText("A");
+                    break;
+                case 11:
+                    dealerCardRankTextViewDown.setText("J");
+                    break;
+                case 12:
+                    dealerCardRankTextViewDown.setText("Q");
+                    break;
+                case 13:
+                    dealerCardRankTextViewDown.setText("K");
+                    break;
+                default:
+                    dealerCardRankTextViewDown.setText(String.valueOf(dealer.revealSingleCard().getRankNumerically()));
+            }
+
+            player.emptyHand();
+            dealer.emptyHand();
         }
-
-        switch (dealer.revealSingleCard().getSuit()) {
-            case SPADES:
-                dealersCardImage.setImageResource(R.drawable.spades); break;
-            case CLUBS:
-                dealersCardImage.setImageResource(R.drawable.clubs); break;
-            case DIAMONDS:
-                dealersCardImage.setImageResource(R.drawable.diamonds); break;
-            case HEARTS:
-                dealersCardImage.setImageResource(R.drawable.hearts); break;
-        }
-
-        switch (player.revealSingleCard().getRankNumerically()){
-            case 1:
-                playerCardRankTextViewUp.setText("A"); break;
-            case 11:
-                playerCardRankTextViewUp.setText("J"); break;
-            case 12:
-                playerCardRankTextViewUp.setText("Q"); break;
-            case 13:
-                playerCardRankTextViewUp.setText("K"); break;
-            default:
-                playerCardRankTextViewUp.setText(String.valueOf(player.revealSingleCard().getRankNumerically()));
-        }
-
-        switch (player.revealSingleCard().getRankNumerically()){
-            case 1:
-                playerCardRankTextViewDown.setText("A"); break;
-            case 11:
-                playerCardRankTextViewDown.setText("J"); break;
-            case 12:
-                playerCardRankTextViewDown.setText("Q"); break;
-            case 13:
-                playerCardRankTextViewDown.setText("K"); break;
-            default:
-                playerCardRankTextViewDown.setText(String.valueOf(player.revealSingleCard().getRankNumerically()));
-        }
-
-        switch (dealer.revealSingleCard().getRankNumerically()){
-            case 1:
-                dealerCardRankTextViewUp.setText("A"); break;
-            case 11:
-                dealerCardRankTextViewUp.setText("J"); break;
-            case 12:
-                dealerCardRankTextViewUp.setText("Q"); break;
-            case 13:
-                dealerCardRankTextViewUp.setText("K"); break;
-            default:
-                dealerCardRankTextViewUp.setText(String.valueOf(dealer.revealSingleCard().getRankNumerically()));
-        }
-
-        switch (dealer.revealSingleCard().getRankNumerically()){
-            case 1:
-                dealerCardRankTextViewDown.setText("A"); break;
-            case 11:
-                dealerCardRankTextViewDown.setText("J"); break;
-            case 12:
-                dealerCardRankTextViewDown.setText("Q"); break;
-            case 13:
-                dealerCardRankTextViewDown.setText("K"); break;
-            default:
-                dealerCardRankTextViewDown.setText(String.valueOf(dealer.revealSingleCard().getRankNumerically()));
-        }
-
-        player.emptyHand();
-        dealer.emptyHand();
     }
 
     public void onResetDeckButtonClicked (View button) {
