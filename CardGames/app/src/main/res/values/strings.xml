@@ -7,4 +7,5 @@
     <string name="player">Your Card</string>
     <string name="high_card_draw_button">Draw</string>
     <string name="reset_deck_button">Reset Deck</string>
+    <string name="startHighCard">Press draw to start the game</string>
 </resources>

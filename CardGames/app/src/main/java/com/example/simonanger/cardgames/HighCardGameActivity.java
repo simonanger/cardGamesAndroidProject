@@ -77,7 +77,7 @@ public class HighCardGameActivity extends AppCompatActivity {
             case 1:
                 winnerMessage = "You win!"; break;
             case 2:
-                winnerMessage = "Dealer wins! Better luck next time"; break;
+                winnerMessage = "Dealer wins! Better luck next time."; break;
             default:
                 winnerMessage = "Error";
         }
@@ -89,7 +89,7 @@ public class HighCardGameActivity extends AppCompatActivity {
         String dealerCardRank = dealer.revealSingleCard().getRank().toString().toLowerCase();
 
         String resultMessage = "You had the " + playerCardRank + " of " + playerCardSuit
-                + ". The dealer had the " + dealerCardRank + " of " + dealerCardSuit + ". \n"
+                + ". \n The dealer had the " + dealerCardRank + " of " + dealerCardSuit + ". \n"
                 + winnerMessage;
 
         resultTextView.setText(resultMessage);
