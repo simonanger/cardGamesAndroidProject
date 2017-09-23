@@ -114,10 +114,57 @@ public class HighCardGameActivity extends AppCompatActivity {
                 dealersCardImage.setImageResource(R.drawable.hearts); break;
         }
 
-        playerCardRankTextViewUp.setText(String.valueOf(player.revealSingleCard().getRankNumerically()));
-        playerCardRankTextViewDown.setText(String.valueOf(player.revealSingleCard().getRankNumerically()));
-        dealerCardRankTextViewUp.setText(String.valueOf(dealer.revealSingleCard().getRankNumerically()));
-        dealerCardRankTextViewDown.setText(String.valueOf(dealer.revealSingleCard().getRankNumerically()));
+        switch (player.revealSingleCard().getRankNumerically()){
+            case 1:
+                playerCardRankTextViewUp.setText("A"); break;
+            case 11:
+                playerCardRankTextViewUp.setText("J"); break;
+            case 12:
+                playerCardRankTextViewUp.setText("Q"); break;
+            case 13:
+                playerCardRankTextViewUp.setText("K"); break;
+            default:
+                playerCardRankTextViewUp.setText(String.valueOf(player.revealSingleCard().getRankNumerically()));
+        }
+
+        switch (player.revealSingleCard().getRankNumerically()){
+            case 1:
+                playerCardRankTextViewDown.setText("A"); break;
+            case 11:
+                playerCardRankTextViewDown.setText("J"); break;
+            case 12:
+                playerCardRankTextViewDown.setText("Q"); break;
+            case 13:
+                playerCardRankTextViewDown.setText("K"); break;
+            default:
+                playerCardRankTextViewDown.setText(String.valueOf(player.revealSingleCard().getRankNumerically()));
+        }
+
+        switch (dealer.revealSingleCard().getRankNumerically()){
+            case 1:
+                dealerCardRankTextViewUp.setText("A"); break;
+            case 11:
+                dealerCardRankTextViewUp.setText("J"); break;
+            case 12:
+                dealerCardRankTextViewUp.setText("Q"); break;
+            case 13:
+                dealerCardRankTextViewUp.setText("K"); break;
+            default:
+                dealerCardRankTextViewUp.setText(String.valueOf(dealer.revealSingleCard().getRankNumerically()));
+        }
+
+        switch (dealer.revealSingleCard().getRankNumerically()){
+            case 1:
+                dealerCardRankTextViewDown.setText("A"); break;
+            case 11:
+                dealerCardRankTextViewDown.setText("J"); break;
+            case 12:
+                dealerCardRankTextViewDown.setText("Q"); break;
+            case 13:
+                dealerCardRankTextViewDown.setText("K"); break;
+            default:
+                dealerCardRankTextViewDown.setText(String.valueOf(dealer.revealSingleCard().getRankNumerically()));
+        }
 
         player.emptyHand();
         dealer.emptyHand();
