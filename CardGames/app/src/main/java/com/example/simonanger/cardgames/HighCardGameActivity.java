@@ -23,8 +23,10 @@ public class HighCardGameActivity extends AppCompatActivity {
     TextView playersCardText;
     TextView dealersCardText;
     TextView resultTextView;
-    TextView playerCardRankTextView;
-    TextView dealerCardRankTextView;
+    TextView playerCardRankTextViewUp;
+    TextView playerCardRankTextViewDown;
+    TextView dealerCardRankTextViewUp;
+    TextView dealerCardRankTextViewDown;
 
     ImageView playersCardImage;
     ImageView dealersCardImage;
@@ -49,8 +51,10 @@ public class HighCardGameActivity extends AppCompatActivity {
 
         resultTextView = (TextView) findViewById(R.id.resultTextView);
 
-        playerCardRankTextView = (TextView) findViewById(R.id.playerCardRankTextView);
-        dealerCardRankTextView = (TextView) findViewById(R.id.dealerCardRankTextView);
+        playerCardRankTextViewUp = (TextView) findViewById(R.id.playerCardRankTextViewUp);
+        playerCardRankTextViewDown = (TextView) findViewById(R.id.playerCardRankTextViewDown);
+        dealerCardRankTextViewUp = (TextView) findViewById(R.id.dealerCardRankTextViewUp);
+        dealerCardRankTextViewDown = (TextView) findViewById(R.id.dealerCardRankTextViewDown);
 
         playersCardImage = (ImageView) findViewById(R.id.playersCardImage);
         dealersCardImage = (ImageView) findViewById(R.id.dealersCardImage);
@@ -109,7 +113,11 @@ public class HighCardGameActivity extends AppCompatActivity {
             case HEARTS:
                 dealersCardImage.setImageResource(R.drawable.hearts); break;
         }
-        
+
+        playerCardRankTextViewUp.setText(String.valueOf(player.revealSingleCard().getRankNumerically()));
+        playerCardRankTextViewDown.setText(String.valueOf(player.revealSingleCard().getRankNumerically()));
+        dealerCardRankTextViewUp.setText(String.valueOf(dealer.revealSingleCard().getRankNumerically()));
+        dealerCardRankTextViewDown.setText(String.valueOf(dealer.revealSingleCard().getRankNumerically()));
 
         player.emptyHand();
         dealer.emptyHand();
