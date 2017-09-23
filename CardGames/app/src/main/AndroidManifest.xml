@@ -9,20 +9,19 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".WelcomeActivity"
             android:label="@string/app_name">
             <intent-filter>
-                <action
-                    android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".HighCardGameActivity"
-            android:label="@string/welcome"></activity>
+            android:label="@string/welcome" />
+        <activity android:name=".ActivityTest"></activity>
     </application>
 
 </manifest>

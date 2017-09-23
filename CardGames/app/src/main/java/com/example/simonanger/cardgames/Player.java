@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 
 public class Player {
-    private String name;
+    public String name;
     ArrayList<Card> hand;
 
     public Player(String name) {
