@@ -23,8 +23,17 @@ public class HighCardGame {
         Card dealerCard = highCardDealer.deal();
         highCardDealer.getCard(dealerCard);
 
+
         int playerCardValue = player.revealSingleCard().getRankNumerically();
         int dealerCardValue = highCardDealer.revealSingleCard().getRankNumerically();
+
+        if(playerCardValue == 1) {
+            playerCardValue = 14;
+        }
+
+        if(dealerCardValue == 1) {
+            dealerCardValue = 14;
+        }
 
 //        if (playerCardValue == 0) {
 //            return 0;

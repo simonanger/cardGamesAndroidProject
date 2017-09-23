@@ -82,9 +82,15 @@ public class HighCardGameActivity extends AppCompatActivity {
                 winnerMessage = "Error";
         }
 
-//        Log.d("this", String.valueOf(player.revealSingleCard().getRankNumerically()));
+        String playerCardSuit = player.revealSingleCard().getSuit().toString().toLowerCase();
+        String playerCardRank = player.revealSingleCard().getRank().toString().toLowerCase();
 
-        String resultMessage = "Unbelievably " + winnerMessage;
+        String dealerCardSuit = dealer.revealSingleCard().getSuit().toString().toLowerCase();
+        String dealerCardRank = dealer.revealSingleCard().getRank().toString().toLowerCase();
+
+        String resultMessage = "You had the " + playerCardRank + " of " + playerCardSuit
+                + ". The dealer had the " + dealerCardRank + " of " + dealerCardSuit + ". \n"
+                + winnerMessage;
 
         resultTextView.setText(resultMessage);
 
