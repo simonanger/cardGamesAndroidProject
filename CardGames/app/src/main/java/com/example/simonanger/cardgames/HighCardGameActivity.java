@@ -67,7 +67,7 @@ public class HighCardGameActivity extends AppCompatActivity {
 
     public void onHighCardDrawButtonClicked (View Button) {
         if (deck.getCards().size() == 0) {
-            resultTextView.setText("The deck is now empty, press the reset button to reshuffle");
+            resultTextView.setText("The deck is now empty, press the reset button to reshuffle.");
         }
         else {
             int result = game.play();
