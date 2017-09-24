@@ -1,8 +1,11 @@
 package com.example.simonanger.cardgames;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AnimationSet;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,6 +33,8 @@ public class HighCardGameActivity extends AppCompatActivity {
     Button resetDeckButton;
     Button stickButton;
 
+    long animationDuration = 1000;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +58,47 @@ public class HighCardGameActivity extends AppCompatActivity {
         dealerCardRankTextViewDown = (TextView) findViewById(R.id.dealerCardRankTextViewDown);
 
         playersCardImage = (ImageView) findViewById(R.id.playersCardImage);
+
+        ObjectAnimator animatorX = ObjectAnimator.ofFloat(playersCardImage, "x", 420f);
+        animatorX.setDuration(animationDuration);
+
+        ObjectAnimator animatorY = ObjectAnimator.ofFloat(playersCardImage, "y", 300f);
+        animatorY.setDuration(animationDuration);
+
+        ObjectAnimator alphaAnimation = ObjectAnimator
+                .ofFloat(playersCardImage, View.ALPHA, 1.0f, 0.0f );
+        alphaAnimation.setDuration(animationDuration);
+
+        ObjectAnimator rotateAnimation = ObjectAnimator
+                .ofFloat(playersCardImage, "rotation", 0f, 360f );
+        rotateAnimation.setDuration(animationDuration);
+
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(animatorX, rotateAnimation);
+        animatorSet.start();
+
+
         dealersCardImage = (ImageView) findViewById(R.id.dealersCardImage);
+
+        ObjectAnimator animatorX2 = ObjectAnimator.ofFloat(dealersCardImage, "x", 420f);
+        animatorX2.setDuration(animationDuration);
+
+        ObjectAnimator animatorY2 = ObjectAnimator.ofFloat(dealersCardImage, "y", 300f);
+        animatorY2.setDuration(animationDuration);
+
+        ObjectAnimator alphaAnimation2 = ObjectAnimator
+                .ofFloat(dealersCardImage, View.ALPHA, 1.0f, 0.0f );
+        alphaAnimation2.setDuration(animationDuration);
+
+        ObjectAnimator rotateAnimation2 = ObjectAnimator
+                .ofFloat(dealersCardImage, "rotation", 0f, 360f );
+        rotateAnimation2.setDuration(animationDuration);
+
+
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        animatorSet2.playTogether(animatorX2, rotateAnimation2);
+        animatorSet2.start();
 
         highCardDrawButton = (Button) findViewById(R.id.highCardDrawButton);
         resetDeckButton = (Button) findViewById(R.id.resetDeckButton);
@@ -96,6 +141,8 @@ public class HighCardGameActivity extends AppCompatActivity {
                     + winnerMessage;
 
             resultTextView.setText(resultMessage);
+
+
 
             switch (player.revealSingleCard(0).getSuit()) {
                 case SPADES:
