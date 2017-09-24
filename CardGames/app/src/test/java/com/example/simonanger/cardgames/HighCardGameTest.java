@@ -9,7 +9,7 @@ import org.junit.Test;
 public class HighCardGameTest {
     HighCardGame highCardGame;
     Deck deck;
-    PlayingDealer playingDealer;
+    PlayingDealer dealer;
     Player player;
 
 
@@ -17,9 +17,9 @@ public class HighCardGameTest {
     public void before() {
         deck = new Deck();
         deck.generate();
-        playingDealer = new PlayingDealer(deck);
+        dealer = new PlayingDealer(deck);
         player = new Player("Classic Harrison");
-        highCardGame = new HighCardGame(deck, playingDealer, player);
+        highCardGame = new HighCardGame(deck, dealer, player);
     }
 
     // This tests if the game method works as random, ran multiple times to see if the random works.

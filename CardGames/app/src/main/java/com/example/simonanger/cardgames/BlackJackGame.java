@@ -8,11 +8,23 @@ public class BlackJackGame implements Game {
     Deck deck;
     PlayingDealer dealer;
     Player player;
+    int playerCardValue;
+    int dealerCardValue;
 
     public BlackJackGame (Deck deck, PlayingDealer dealer, Player player) {
         this.deck = deck;
         this.dealer = dealer;
         this.player = player;
+        playerCardValue = 0;
+        dealerCardValue = 0;
+    }
+
+    public int getPlayerCardValue() {
+        return playerCardValue;
+    }
+
+    public int getDealerCardValue() {
+        return dealerCardValue;
     }
 
     public int draw() {
@@ -59,9 +71,27 @@ public class BlackJackGame implements Game {
                 dealersSecondCard = 10;
         }
 
-        int playerCardValue = playersFirstCard + playersSecondCard;
-        int dealerCardValue = dealersFirstCard + dealersSecondCard;
+        playerCardValue += (playersFirstCard + playersSecondCard);
+        dealerCardValue += (dealersFirstCard + dealersSecondCard);
 
+        return playerCardValue;
+    }
+
+    public void playerTwist() {
+        player.getCard(dealer.deal());
+        playerCardValue += player.revealSingleCard(player.getHand()
+                .size()-1).getRankNumerically();
+    }
+
+    public void dealersHandLessThan17() {
+        if (dealerCardValue < 17 ) {
+            dealer.getCard(dealer.deal());
+            dealerCardValue += dealer.revealSingleCard(dealer.getHand()
+                    .size()-1).getRankNumerically();
+        }
+    }
+
+    public int assess() {
         if (playerCardValue > 21) {
             return 0;
         }
@@ -79,11 +109,6 @@ public class BlackJackGame implements Game {
         }
 
         return -1;
-    }
-
-    public void playerTwist() {
-//        Card playerCard1 = dealer.deal();
-//        player.getCard(playerCard1);
     }
 
 }
