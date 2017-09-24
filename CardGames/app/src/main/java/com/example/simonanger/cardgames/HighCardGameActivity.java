@@ -88,11 +88,11 @@ public class HighCardGameActivity extends AppCompatActivity {
                     winnerMessage = "Error";
             }
 
-            String playerCardSuit = player.revealSingleCard().getSuit().toString().toLowerCase();
-            String playerCardRank = player.revealSingleCard().getRank().toString().toLowerCase();
+            String playerCardSuit = player.revealSingleCard(0).getSuit().toString().toLowerCase();
+            String playerCardRank = player.revealSingleCard(0).getRank().toString().toLowerCase();
 
-            String dealerCardSuit = dealer.revealSingleCard().getSuit().toString().toLowerCase();
-            String dealerCardRank = dealer.revealSingleCard().getRank().toString().toLowerCase();
+            String dealerCardSuit = dealer.revealSingleCard(0).getSuit().toString().toLowerCase();
+            String dealerCardRank = dealer.revealSingleCard(0).getRank().toString().toLowerCase();
 
             String resultMessage = "You had the " + playerCardRank + " of " + playerCardSuit
                     + ". \n The dealer had the " + dealerCardRank + " of " + dealerCardSuit + ". \n"
@@ -100,7 +100,7 @@ public class HighCardGameActivity extends AppCompatActivity {
 
             resultTextView.setText(resultMessage);
 
-            switch (player.revealSingleCard().getSuit()) {
+            switch (player.revealSingleCard(0).getSuit()) {
                 case SPADES:
                     playersCardImage.setImageResource(R.drawable.spades);
                     break;
@@ -115,7 +115,7 @@ public class HighCardGameActivity extends AppCompatActivity {
                     break;
             }
 
-            switch (dealer.revealSingleCard().getSuit()) {
+            switch (dealer.revealSingleCard(0).getSuit()) {
                 case SPADES:
                     dealersCardImage.setImageResource(R.drawable.spades);
                     break;
@@ -130,7 +130,7 @@ public class HighCardGameActivity extends AppCompatActivity {
                     break;
             }
 
-            switch (player.revealSingleCard().getRankNumerically()) {
+            switch (player.revealSingleCard(0).getRankNumerically()) {
                 case 1:
                     playerCardRankTextViewUp.setText("A");
                     break;
@@ -144,10 +144,10 @@ public class HighCardGameActivity extends AppCompatActivity {
                     playerCardRankTextViewUp.setText("K");
                     break;
                 default:
-                    playerCardRankTextViewUp.setText(String.valueOf(player.revealSingleCard().getRankNumerically()));
+                    playerCardRankTextViewUp.setText(String.valueOf(player.revealSingleCard(0).getRankNumerically()));
             }
 
-            switch (player.revealSingleCard().getRankNumerically()) {
+            switch (player.revealSingleCard(0).getRankNumerically()) {
                 case 1:
                     playerCardRankTextViewDown.setText("A");
                     break;
@@ -161,10 +161,10 @@ public class HighCardGameActivity extends AppCompatActivity {
                     playerCardRankTextViewDown.setText("K");
                     break;
                 default:
-                    playerCardRankTextViewDown.setText(String.valueOf(player.revealSingleCard().getRankNumerically()));
+                    playerCardRankTextViewDown.setText(String.valueOf(player.revealSingleCard(0).getRankNumerically()));
             }
 
-            switch (dealer.revealSingleCard().getRankNumerically()) {
+            switch (dealer.revealSingleCard(0).getRankNumerically()) {
                 case 1:
                     dealerCardRankTextViewUp.setText("A");
                     break;
@@ -178,10 +178,10 @@ public class HighCardGameActivity extends AppCompatActivity {
                     dealerCardRankTextViewUp.setText("K");
                     break;
                 default:
-                    dealerCardRankTextViewUp.setText(String.valueOf(dealer.revealSingleCard().getRankNumerically()));
+                    dealerCardRankTextViewUp.setText(String.valueOf(dealer.revealSingleCard(0).getRankNumerically()));
             }
 
-            switch (dealer.revealSingleCard().getRankNumerically()) {
+            switch (dealer.revealSingleCard(0).getRankNumerically()) {
                 case 1:
                     dealerCardRankTextViewDown.setText("A");
                     break;
@@ -195,7 +195,7 @@ public class HighCardGameActivity extends AppCompatActivity {
                     dealerCardRankTextViewDown.setText("K");
                     break;
                 default:
-                    dealerCardRankTextViewDown.setText(String.valueOf(dealer.revealSingleCard().getRankNumerically()));
+                    dealerCardRankTextViewDown.setText(String.valueOf(dealer.revealSingleCard(0).getRankNumerically()));
             }
 
             player.emptyHand();

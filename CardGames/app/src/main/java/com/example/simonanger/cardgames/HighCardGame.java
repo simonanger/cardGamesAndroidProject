@@ -24,8 +24,8 @@ public class HighCardGame {
         highCardDealer.getCard(dealerCard);
 
 
-        int playerCardValue = player.revealSingleCard().getRankNumerically();
-        int dealerCardValue = highCardDealer.revealSingleCard().getRankNumerically();
+        int playerCardValue = player.revealSingleCard(0).getRankNumerically();
+        int dealerCardValue = highCardDealer.revealSingleCard(0).getRankNumerically();
 
         if(playerCardValue == 1) {
             playerCardValue = 14;

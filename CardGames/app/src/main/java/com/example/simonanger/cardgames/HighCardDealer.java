@@ -41,7 +41,7 @@ public class HighCardDealer implements Dealer {
         hand.clear();
     }
 
-    public Card revealSingleCard() {
-        return hand.get(0);
+    public Card revealSingleCard(int num) {
+        return hand.get(num);
     }
 }

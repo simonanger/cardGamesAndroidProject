@@ -54,7 +54,7 @@ public class PlayerTest {
     @Test
     public void testRevealSingleCard() {
         player.getCard(card1);
-        Card singleCard = player.revealSingleCard();
+        Card singleCard = player.revealSingleCard(0);
         assertEquals(Rank.FIVE, singleCard.getRank());
     }
 
