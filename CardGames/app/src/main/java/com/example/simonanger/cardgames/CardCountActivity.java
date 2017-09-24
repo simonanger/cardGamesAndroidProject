@@ -1,5 +1,7 @@
 package com.example.simonanger.cardgames;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,6 +41,8 @@ public class CardCountActivity extends AppCompatActivity {
     int result;
     int finalAnswer;
 
+    long animationDuration = 1000;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +73,66 @@ public class CardCountActivity extends AppCompatActivity {
         answerText = (EditText) findViewById(R.id.cardCountAnswerTextBox);
         cardCountResult = (TextView) findViewById(R.id.cardCountResult);
         answerButton.setVisibility(View.GONE);
+
+
+        ObjectAnimator animatorX = ObjectAnimator.ofFloat(cardOne, "x", 100f);
+        animatorX.setDuration(animationDuration);
+
+        ObjectAnimator animatorY = ObjectAnimator.ofFloat(cardOne, "y", 300f);
+        animatorY.setDuration(animationDuration);
+
+        ObjectAnimator alphaAnimation = ObjectAnimator
+                .ofFloat(cardOne, View.ALPHA, 1.0f, 0.0f );
+        alphaAnimation.setDuration(animationDuration);
+
+        ObjectAnimator rotateAnimation = ObjectAnimator
+                .ofFloat(cardOne, "rotation", 0f, 360f );
+        rotateAnimation.setDuration(animationDuration);
+
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(animatorX, rotateAnimation);
+        animatorSet.start();
+
+
+        ObjectAnimator animatorX2 = ObjectAnimator.ofFloat(cardTwo, "x", 400f);
+        animatorX2.setDuration(animationDuration);
+
+        ObjectAnimator animatorY2 = ObjectAnimator.ofFloat(cardTwo, "y", 300f);
+        animatorY2.setDuration(animationDuration);
+
+        ObjectAnimator alphaAnimation2 = ObjectAnimator
+                .ofFloat(cardTwo, View.ALPHA, 1.0f, 0.0f );
+        alphaAnimation2.setDuration(animationDuration);
+
+        ObjectAnimator rotateAnimation2 = ObjectAnimator
+                .ofFloat(cardTwo, "rotation", 0f, 360f );
+        rotateAnimation2.setDuration(animationDuration);
+
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        animatorSet2.playTogether(animatorX2, rotateAnimation2);
+        animatorSet2.start();
+
+
+
+        ObjectAnimator animatorX3 = ObjectAnimator.ofFloat(cardThree, "x", 700f);
+        animatorX3.setDuration(animationDuration);
+
+        ObjectAnimator animatorY3 = ObjectAnimator.ofFloat(cardThree, "y", 300f);
+        animatorY3.setDuration(animationDuration);
+
+        ObjectAnimator alphaAnimation3 = ObjectAnimator
+                .ofFloat(cardThree, View.ALPHA, 1.0f, 0.0f );
+        alphaAnimation3.setDuration(animationDuration);
+
+        ObjectAnimator rotateAnimation3 = ObjectAnimator
+                .ofFloat(cardThree, "rotation", 0f, 360f );
+        rotateAnimation3.setDuration(animationDuration);
+
+
+        AnimatorSet animatorSet3 = new AnimatorSet();
+        animatorSet3.playTogether(animatorX3, rotateAnimation3);
+        animatorSet3.start();
 
     }
 

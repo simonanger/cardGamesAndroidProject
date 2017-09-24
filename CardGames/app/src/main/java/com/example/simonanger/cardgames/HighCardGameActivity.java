@@ -108,6 +108,7 @@ public class HighCardGameActivity extends AppCompatActivity {
     }
 
     public void onHighCardDrawButtonClicked (View Button) {
+
         if (deck.getCards().size() == 0) {
             resultTextView.setText("The deck is now empty, press the reset button to reshuffle.");
         }
@@ -142,8 +143,6 @@ public class HighCardGameActivity extends AppCompatActivity {
 
             resultTextView.setText(resultMessage);
 
-
-
             switch (player.revealSingleCard(0).getSuit()) {
                 case SPADES:
                     playersCardImage.setImageResource(R.drawable.spades);
@@ -157,6 +156,7 @@ public class HighCardGameActivity extends AppCompatActivity {
                 case HEARTS:
                     playersCardImage.setImageResource(R.drawable.hearts);
                     break;
+
             }
 
             switch (dealer.revealSingleCard(0).getSuit()) {
