@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class BlackJackGameActivity extends AppCompatActivity {
@@ -19,6 +20,15 @@ public class BlackJackGameActivity extends AppCompatActivity {
 
     TextView playerCardValueText;
     TextView dealerCardValueText;
+
+    ImageView playersFirstCardImage;
+    ImageView playersSecondCardImage;
+    ImageView playersThirdCardImage;
+    ImageView playersFourthCardImage;
+    ImageView dealersFirstCardImage;
+    ImageView dealersSecondCardImage;
+    ImageView dealersThirdCardImage;
+    ImageView dealersFourthCardImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +46,13 @@ public class BlackJackGameActivity extends AppCompatActivity {
 
         playerCardValueText = (TextView) findViewById(R.id.blackJackPlayerScoreTextView);
         dealerCardValueText = (TextView) findViewById(R.id.blackJackDealerScoreTextView);
+
+        playersFirstCardImage = (ImageView) findViewById(R.id.blackJackPlayersFirstCardImage);
+        playersSecondCardImage = (ImageView) findViewById(R.id.blackJackPlayersSecondCardImage);
+
+
+        dealersFirstCardImage = (ImageView) findViewById(R.id.blackJackDealersFirstCardImage);
+        dealersSecondCardImage = (ImageView) findViewById(R.id.blackJackDealersSecondCardImage);
     }
 
     public void onBlackJackDrawButtonClicked (View Button) {
@@ -56,9 +73,59 @@ public class BlackJackGameActivity extends AppCompatActivity {
                     + dealer.revealSingleCard(0).getRankNumerically() + ".");
 
         }
+
+        switch (player.revealSingleCard(0).getSuit()) {
+            case SPADES:
+                playersFirstCardImage.setImageResource(R.drawable.spades);
+                break;
+            case CLUBS:
+                playersFirstCardImage.setImageResource(R.drawable.clubs);
+                break;
+            case DIAMONDS:
+                playersFirstCardImage.setImageResource(R.drawable.diamonds);
+                break;
+            case HEARTS:
+                playersFirstCardImage.setImageResource(R.drawable.hearts);
+                break;
+        }
+
+        switch (player.revealSingleCard(1).getSuit()) {
+            case SPADES:
+                playersSecondCardImage.setImageResource(R.drawable.spades);
+                break;
+            case CLUBS:
+                playersSecondCardImage.setImageResource(R.drawable.clubs);
+                break;
+            case DIAMONDS:
+                playersSecondCardImage.setImageResource(R.drawable.diamonds);
+                break;
+            case HEARTS:
+                playersSecondCardImage.setImageResource(R.drawable.hearts);
+                break;
+        }
+
+        switch (dealer.revealSingleCard(0).getSuit()) {
+            case SPADES:
+                dealersFirstCardImage.setImageResource(R.drawable.spades);
+                break;
+            case CLUBS:
+                dealersFirstCardImage.setImageResource(R.drawable.clubs);
+                break;
+            case DIAMONDS:
+                dealersFirstCardImage.setImageResource(R.drawable.diamonds);
+                break;
+            case HEARTS:
+                dealersFirstCardImage.setImageResource(R.drawable.hearts);
+                break;
+        }
+
     }
 
     public void onTwistButtonClicked (View Button) {
+
+        playersThirdCardImage = (ImageView) findViewById(R.id.blackJackPlayersThirdCardImage);
+        playersFourthCardImage = (ImageView) findViewById(R.id.blackJackPlayersFourthCardImage);
+
         if (game.playerCardValue >= 21) {
             playerCardValueText.setText("You are bust. Press deal to start again.");
         }

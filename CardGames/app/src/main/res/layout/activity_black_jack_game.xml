@@ -55,17 +55,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="0dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:onClick="onTwistButtonClicked"
         android:text="@string/twist"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.345" />
+        app:layout_constraintVertical_bias="0.345"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.214" />
 
     <Button
         android:id="@+id/stickButton"
@@ -78,27 +78,63 @@
         android:onClick="onStickButtonClicked"
         android:text="@string/stick"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.882"
+        app:layout_constraintHorizontal_bias="0.788"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.346" />
+        app:layout_constraintVertical_bias="0.345" />
+
+    <TextView
+        android:id="@+id/playerFourthCardRankTextViewUp"
+        android:layout_width="25dp"
+        android:layout_height="24dp"
+        android:layout_marginRight="-120dp"
+        android:layout_marginTop="0dp"
+        android:textAlignment="center"
+        app:layout_constraintRight_toRightOf="@+id/blackJackPlayersFourthCardImage"
+        app:layout_constraintTop_toTopOf="@+id/blackJackPlayersFourthCardImage" />
 
     <ImageView
-        android:id="@+id/blackJackPlayersFirstCardImage"
-        android:layout_width="61dp"
-        android:layout_height="82dp"
+        android:id="@+id/blackJackPlayersFourthCardImage"
+        android:layout_width="80dp"
+        android:layout_height="107dp"
         android:layout_marginBottom="58dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.233"
+        app:layout_constraintHorizontal_bias="0.72"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.997" />
+
+    <TextView
+        android:id="@+id/playerFourthCardRankTextViewDown"
+        android:layout_width="25dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/blackJackPlayersFourthCardImage"
+        app:layout_constraintLeft_toLeftOf="@+id/blackJackPlayersFourthCardImage" />
+
+    <ImageView
+        android:id="@+id/blackJackPlayersFirstCardImage"
+        android:layout_width="80dp"
+        android:layout_height="107dp"
+        android:layout_marginBottom="58dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/cardback"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteY="437dp" />
 
     <TextView
         android:id="@+id/playerFirstCardRankTextViewUp"
@@ -122,14 +158,14 @@
 
     <ImageView
         android:id="@+id/blackJackPlayersSecondCardImage"
-        android:layout_width="61dp"
-        android:layout_height="82dp"
+        android:layout_width="80dp"
+        android:layout_height="107dp"
         android:layout_marginBottom="58dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.736"
+        app:layout_constraintHorizontal_bias="0.413"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -158,17 +194,18 @@
 
     <ImageView
         android:id="@+id/blackJackPlayersThirdCardImage"
-        android:layout_width="61dp"
-        android:layout_height="82dp"
+        android:layout_width="80dp"
+        android:layout_height="107dp"
         android:layout_marginBottom="58dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.279"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.997" />
 
     <TextView
         android:id="@+id/playerThirdCardRankTextViewUp"
@@ -190,7 +227,77 @@
         app:layout_constraintBottom_toBottomOf="@+id/blackJackPlayersThirdCardImage"
         app:layout_constraintLeft_toLeftOf="@+id/blackJackPlayersThirdCardImage" />
 
+    <ImageView
+        android:id="@+id/blackJackDealersSecondCardImage"
+        android:layout_width="80dp"
+        android:layout_height="107dp"
+        android:layout_marginBottom="58dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.018"
+        app:srcCompat="@drawable/cardback" />
 
+    <TextView
+        android:id="@+id/dealerSecondCardRankTextViewDown"
+        android:layout_width="25dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/blackJackDealersSecondCardImage"
+        app:layout_constraintLeft_toLeftOf="@+id/blackJackDealersSecondCardImage" />
+
+    <TextView
+        android:id="@+id/dealerSecondCardRankTextViewUp"
+        android:layout_width="25dp"
+        android:layout_height="24dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:textAlignment="center"
+        app:layout_constraintRight_toRightOf="@+id/blackJackDealersSecondCardImage"
+        app:layout_constraintTop_toTopOf="@+id/blackJackDealersSecondCardImage" />
+
+    <ImageView
+        android:id="@+id/blackJackDealersFirstCardImage"
+        android:layout_width="80dp"
+        android:layout_height="107dp"
+        android:layout_marginBottom="58dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.412"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.018"
+        app:srcCompat="@drawable/cardback"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dealerFirstCardRankTextViewUp"
+        android:layout_width="25dp"
+        android:layout_height="24dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:textAlignment="center"
+        app:layout_constraintRight_toRightOf="@+id/blackJackDealersFirstCardImage"
+        app:layout_constraintTop_toTopOf="@+id/blackJackDealersFirstCardImage" />
+
+    <TextView
+        android:id="@+id/dealerFirstCardRankTextViewDown"
+        android:layout_width="25dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/blackJackDealersFirstCardImage"
+        app:layout_constraintLeft_toLeftOf="@+id/blackJackDealersFirstCardImage" />
 
 
 </android.support.constraint.ConstraintLayout>
