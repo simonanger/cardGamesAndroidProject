@@ -67,6 +67,7 @@ public class CardCountActivity extends AppCompatActivity {
 
         answerText = (EditText) findViewById(R.id.cardCountAnswerTextBox);
         cardCountResult = (TextView) findViewById(R.id.cardCountResult);
+        answerButton.setVisibility(View.GONE);
     }
 
     public void onCardCountButtonClicked(View Button) throws InterruptedException {
@@ -197,21 +198,28 @@ public class CardCountActivity extends AppCompatActivity {
 
         deck.generate();
 
+        answerButton.setVisibility(View.VISIBLE);
+
     }
 
     public void onAnswerButtonClicked(View Button) {
-
-
-        String answer = answerText.getText().toString();
-        finalAnswer = Integer.parseInt(answer);
-
-        if (result == finalAnswer) {
-            cardCountResult.setText("You are correct! Draw again?");
-            answerText.setText("");
+        if (answerText.getText().toString() == "") {
+            cardCountResult.setText("Please provide an answer or draw again.");
         }
+        else {
 
-        if (result != finalAnswer) {
-            cardCountResult.setText("You are incorrect! Try again?");
+            String answer = answerText.getText().toString();
+            finalAnswer = Integer.parseInt(answer);
+
+            if (result == finalAnswer) {
+                cardCountResult.setText("You are correct! Draw again?");
+                answerText.setText("");
+                answerButton.setVisibility(View.GONE);
+            }
+
+            if (result != finalAnswer) {
+                cardCountResult.setText("You are incorrect! Try again?");
+            }
         }
     }
 
