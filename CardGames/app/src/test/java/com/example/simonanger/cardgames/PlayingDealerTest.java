@@ -8,8 +8,8 @@ import static org.junit.Assert.*;
 /**
  * Created by simonanger on 22/09/2017.
  */
-public class HighCardDealerTest {
-    HighCardDealer highCardDealer;
+public class PlayingDealerTest {
+    PlayingDealer playingDealer;
     Deck deck;
     Player player;
     Card card1;
@@ -22,13 +22,13 @@ public class HighCardDealerTest {
         card2 = new Card (Suit.SPADES, Rank.NINE);
         deck.addCard(card1);
         deck.addCard(card2);
-        highCardDealer = new HighCardDealer(deck);
+        playingDealer = new PlayingDealer(deck);
         player = new Player("Classic Harrison");
     }
 
     @Test
     public void deal() {
-        Card randomCard = highCardDealer.deal();
+        Card randomCard = playingDealer.deal();
         player.getCard(randomCard);
         assertEquals(1, player.getHand().size() );
 //        assertEquals(Rank.SEVEN, randomCard.getRank()); test to see if random - it is!
@@ -37,34 +37,34 @@ public class HighCardDealerTest {
 
     @Test
     public void testHandStartsEmpty() {
-        assertEquals(0, highCardDealer.getHand().size());
+        assertEquals(0, playingDealer.getHand().size());
     }
 
     @Test
     public void testGetCard() {
-        highCardDealer.getCard(card1);
-        assertEquals(1, highCardDealer.getHand().size());
+        playingDealer.getCard(card1);
+        assertEquals(1, playingDealer.getHand().size());
     }
 
     @Test
     public void testLoseCard() {
-        highCardDealer.getCard(card1);
-        highCardDealer.loseCard(card1);
+        playingDealer.getCard(card1);
+        playingDealer.loseCard(card1);
         assertEquals(0, player.getHand().size());
     }
 
     @Test
     public void testEmptyHand() {
-        highCardDealer.getCard(card1);
-        highCardDealer.getCard(card2);
-        highCardDealer.emptyHand();
-        assertEquals(0, highCardDealer.getHand().size());
+        playingDealer.getCard(card1);
+        playingDealer.getCard(card2);
+        playingDealer.emptyHand();
+        assertEquals(0, playingDealer.getHand().size());
     }
 
     @Test
     public void testRevealSingleCard() {
-        highCardDealer.getCard(card1);
-        Card singleCard = highCardDealer.revealSingleCard(0);
+        playingDealer.getCard(card1);
+        Card singleCard = playingDealer.revealSingleCard(0);
         assertEquals(Rank.SEVEN, singleCard.getRank());
     }
 

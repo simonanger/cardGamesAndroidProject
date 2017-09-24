@@ -1,23 +1,18 @@
 package com.example.simonanger.cardgames;
 
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class HighCardGameActivity extends AppCompatActivity {
 
     HighCardGame game;
 
     Deck deck;
-    HighCardDealer dealer;
+    PlayingDealer dealer;
     Player player;
 
     TextView playersCardText;
@@ -42,7 +37,7 @@ public class HighCardGameActivity extends AppCompatActivity {
 
         deck = new Deck();
         deck.generate();
-        dealer = new HighCardDealer(deck);
+        dealer = new PlayingDealer(deck);
         player = new Player("Classic Harrison");
         game = new HighCardGame(deck, dealer, player);
 
@@ -70,7 +65,7 @@ public class HighCardGameActivity extends AppCompatActivity {
             resultTextView.setText("The deck is now empty, press the reset button to reshuffle.");
         }
         else {
-            int result = game.play();
+            int result = game.draw();
 
             String winnerMessage;
 

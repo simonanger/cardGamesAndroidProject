@@ -1,31 +1,29 @@
 package com.example.simonanger.cardgames;
 
-import android.util.Log;
-
 /**
  * Created by simonanger on 22/09/2017.
  */
 
-public class HighCardGame {
+public class HighCardGame implements Game {
     Deck deck;
-    HighCardDealer highCardDealer;
+    PlayingDealer dealer;
     Player player;
 
-    public HighCardGame(Deck deck, HighCardDealer highCardDealer, Player player) {
+    public HighCardGame(Deck deck, PlayingDealer dealer, Player player) {
         this.deck = deck;
-        this.highCardDealer = highCardDealer;
+        this.dealer = dealer;
         this.player = player;
     }
 
-    public int play() {
-        Card playerCard = highCardDealer.deal();
+    public int draw() {
+        Card playerCard = dealer.deal();
         player.getCard(playerCard);
-        Card dealerCard = highCardDealer.deal();
-        highCardDealer.getCard(dealerCard);
+        Card dealerCard = dealer.deal();
+        dealer.getCard(dealerCard);
 
 
         int playerCardValue = player.revealSingleCard(0).getRankNumerically();
-        int dealerCardValue = highCardDealer.revealSingleCard(0).getRankNumerically();
+        int dealerCardValue = dealer.revealSingleCard(0).getRankNumerically();
 
         if(playerCardValue == 1) {
             playerCardValue = 14;

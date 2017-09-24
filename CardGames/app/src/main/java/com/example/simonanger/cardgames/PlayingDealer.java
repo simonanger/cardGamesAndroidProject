@@ -7,12 +7,12 @@ import java.util.Random;
  * Created by simonanger on 22/09/2017.
  */
 
-public class HighCardDealer implements Dealer {
+public class PlayingDealer implements PlayableDealer {
     Deck deck;
     Random random;
     ArrayList<Card> hand;
 
-    public HighCardDealer(Deck deck){
+    public PlayingDealer(Deck deck){
         this.deck = deck;
         this.random = new Random();
         this.hand = new ArrayList<>();

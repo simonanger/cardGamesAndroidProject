@@ -6,7 +6,7 @@ import android.widget.Button;
 
 public class ActivityTest extends AppCompatActivity {
 
-    HighCardDealer dealer;
+    PlayingDealer dealer;
     Player player;
     Deck deck;
 
@@ -24,7 +24,7 @@ public class ActivityTest extends AppCompatActivity {
 
         deck = new Deck();
         deck.generate();
-        dealer = new HighCardDealer(deck);
+        dealer = new PlayingDealer(deck);
         player = new Player("Classic Harrison");
         game = new HighCardGame(deck, dealer, player);
     }
