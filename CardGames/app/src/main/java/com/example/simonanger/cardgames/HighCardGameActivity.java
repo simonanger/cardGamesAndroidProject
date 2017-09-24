@@ -130,72 +130,46 @@ public class HighCardGameActivity extends AppCompatActivity {
                     break;
             }
 
-            switch (player.revealSingleCard(0).getRankNumerically()) {
-                case 1:
-                    playerCardRankTextViewUp.setText("A");
-                    break;
-                case 11:
-                    playerCardRankTextViewUp.setText("J");
-                    break;
-                case 12:
-                    playerCardRankTextViewUp.setText("Q");
-                    break;
-                case 13:
-                    playerCardRankTextViewUp.setText("K");
-                    break;
-                default:
-                    playerCardRankTextViewUp.setText(String.valueOf(player.revealSingleCard(0).getRankNumerically()));
+            if (player.revealSingleCard(0).getRankNumerically() == 1) {
+                playerCardRankTextViewUp.setText("A");
+                playerCardRankTextViewDown.setText("A");
+            }
+            else if (player.revealSingleCard(0).getRankNumerically() == 11) {
+                playerCardRankTextViewUp.setText("J");
+                playerCardRankTextViewDown.setText("J");
+            }
+            else if (player.revealSingleCard(0).getRankNumerically() == 12) {
+                playerCardRankTextViewUp.setText("Q");
+                playerCardRankTextViewDown.setText("Q");
+            }
+            else if (player.revealSingleCard(0).getRankNumerically() == 13) {
+                playerCardRankTextViewUp.setText("K");
+                playerCardRankTextViewDown.setText("K");
+            }
+            else {
+                playerCardRankTextViewUp.setText(String.valueOf(player.revealSingleCard(0).getRankNumerically()));
+                playerCardRankTextViewDown.setText(String.valueOf(player.revealSingleCard(0).getRankNumerically()));
             }
 
-            switch (player.revealSingleCard(0).getRankNumerically()) {
-                case 1:
-                    playerCardRankTextViewDown.setText("A");
-                    break;
-                case 11:
-                    playerCardRankTextViewDown.setText("J");
-                    break;
-                case 12:
-                    playerCardRankTextViewDown.setText("Q");
-                    break;
-                case 13:
-                    playerCardRankTextViewDown.setText("K");
-                    break;
-                default:
-                    playerCardRankTextViewDown.setText(String.valueOf(player.revealSingleCard(0).getRankNumerically()));
+            if (dealer.revealSingleCard(0).getRankNumerically() == 1) {
+                dealerCardRankTextViewUp.setText("A");
+                dealerCardRankTextViewDown.setText("A");
             }
-
-            switch (dealer.revealSingleCard(0).getRankNumerically()) {
-                case 1:
-                    dealerCardRankTextViewUp.setText("A");
-                    break;
-                case 11:
-                    dealerCardRankTextViewUp.setText("J");
-                    break;
-                case 12:
-                    dealerCardRankTextViewUp.setText("Q");
-                    break;
-                case 13:
-                    dealerCardRankTextViewUp.setText("K");
-                    break;
-                default:
-                    dealerCardRankTextViewUp.setText(String.valueOf(dealer.revealSingleCard(0).getRankNumerically()));
+            else if (dealer.revealSingleCard(0).getRankNumerically() == 11) {
+                dealerCardRankTextViewUp.setText("J");
+                dealerCardRankTextViewDown.setText("J");
             }
-
-            switch (dealer.revealSingleCard(0).getRankNumerically()) {
-                case 1:
-                    dealerCardRankTextViewDown.setText("A");
-                    break;
-                case 11:
-                    dealerCardRankTextViewDown.setText("J");
-                    break;
-                case 12:
-                    dealerCardRankTextViewDown.setText("Q");
-                    break;
-                case 13:
-                    dealerCardRankTextViewDown.setText("K");
-                    break;
-                default:
-                    dealerCardRankTextViewDown.setText(String.valueOf(dealer.revealSingleCard(0).getRankNumerically()));
+            else if (dealer.revealSingleCard(0).getRankNumerically() == 12) {
+                dealerCardRankTextViewUp.setText("Q");
+                dealerCardRankTextViewDown.setText("Q");
+            }
+            else if (dealer.revealSingleCard(0).getRankNumerically() == 13) {
+                dealerCardRankTextViewUp.setText("K");
+                dealerCardRankTextViewDown.setText("K");
+            }
+            else {
+                dealerCardRankTextViewUp.setText(String.valueOf(dealer.revealSingleCard(0).getRankNumerically()));
+                dealerCardRankTextViewDown.setText(String.valueOf(dealer.revealSingleCard(0).getRankNumerically()));
             }
 
             player.emptyHand();
