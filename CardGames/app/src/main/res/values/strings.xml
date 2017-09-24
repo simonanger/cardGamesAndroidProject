@@ -9,4 +9,7 @@
     <string name="reset_deck_button">Reset Deck</string>
     <string name="startHighCard">Press draw to start the game</string>
     <string name="blackjack">Blackjack</string>
+    <string name="blackJackDraw">Draw</string>
+    <string name="stick">Stick</string>
+    <string name="twist">Twist</string>
 </resources>

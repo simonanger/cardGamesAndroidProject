@@ -71,6 +71,35 @@ public class BlackJackGame implements Game {
                 dealersSecondCard = 10;
         }
 
+        if (playerCardValue <= 10) {
+            switch (playersFirstCard) {
+                case 1:
+                    playersFirstCard = 11;
+            }
+
+        }
+
+        if (playerCardValue <= 10) {
+            switch (playersSecondCard) {
+                case 1:
+                    playersSecondCard = 11;
+            }
+        }
+
+        if (dealerCardValue <= 10) {
+            switch (dealersFirstCard) {
+                case 1:
+                    dealersFirstCard = 11;
+            }
+        }
+
+        if (dealerCardValue <= 10) {
+            switch (dealersSecondCard) {
+                case 1:
+                    dealersSecondCard = 11;
+            }
+        }
+
         playerCardValue += (playersFirstCard + playersSecondCard);
         dealerCardValue += (dealersFirstCard + dealersSecondCard);
 
@@ -79,21 +108,65 @@ public class BlackJackGame implements Game {
 
     public void playerTwist() {
         player.getCard(dealer.deal());
-        playerCardValue += player.revealSingleCard(player.getHand()
+
+        int playersNewCard = player.revealSingleCard(player.getHand()
                 .size()-1).getRankNumerically();
+
+        if (playerCardValue <= 10) {
+            switch (playersNewCard) {
+                case 1:
+                    playersNewCard = 11;
+            }
+        }
+
+        switch (playersNewCard) {
+            case 11:
+            case 12:
+            case 13:
+                playersNewCard = 10;
+        }
+
+        playerCardValue += playersNewCard;
+
+        if (playerCardValue > 21) {
+            this.assess();
+        }
     }
 
     public void dealersHandLessThan17() {
         if (dealerCardValue < 17 ) {
             dealer.getCard(dealer.deal());
-            dealerCardValue += dealer.revealSingleCard(dealer.getHand()
+
+            int dealersNewCard = dealer.revealSingleCard(dealer.getHand()
                     .size()-1).getRankNumerically();
+
+            if (dealerCardValue <= 10) {
+                switch (dealersNewCard) {
+                    case 1:
+                        dealersNewCard = 11;
+                }
+            }
+
+            switch (dealersNewCard) {
+                case 11:
+                case 12:
+                case 13:
+                    dealersNewCard = 10;
+            }
+            dealerCardValue += dealersNewCard;
         }
+
     }
 
     public int assess() {
+//        this.dealersHandLessThan17();
+
         if (playerCardValue > 21) {
-            return 0;
+            return 2;
+        }
+
+        if (dealerCardValue > 21) {
+            return 1;
         }
 
         if (playerCardValue > dealerCardValue) {

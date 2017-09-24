@@ -28,6 +28,7 @@ public class HighCardGameActivity extends AppCompatActivity {
 
     Button highCardDrawButton;
     Button resetDeckButton;
+    Button stickButton;
 
 
     @Override
@@ -56,6 +57,7 @@ public class HighCardGameActivity extends AppCompatActivity {
 
         highCardDrawButton = (Button) findViewById(R.id.highCardDrawButton);
         resetDeckButton = (Button) findViewById(R.id.resetDeckButton);
+        stickButton = (Button) findViewById(R.id.stickButton);
 
 
     }

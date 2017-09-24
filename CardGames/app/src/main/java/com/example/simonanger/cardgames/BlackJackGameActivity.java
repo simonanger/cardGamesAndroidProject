@@ -15,6 +15,7 @@ public class BlackJackGameActivity extends AppCompatActivity {
     Player player;
 
     Button blackJackDrawButton;
+    Button twistButton;
 
     TextView playerCardValueText;
     TextView dealerCardValueText;
@@ -31,12 +32,14 @@ public class BlackJackGameActivity extends AppCompatActivity {
         game = new BlackJackGame(deck, dealer, player);
 
         blackJackDrawButton = (Button) findViewById(R.id.blackjackDrawButton);
+        twistButton = (Button) findViewById(R.id.twistButton);
 
         playerCardValueText = (TextView) findViewById(R.id.blackJackPlayerScoreTextView);
         dealerCardValueText = (TextView) findViewById(R.id.blackJackDealerScoreTextView);
     }
 
     public void onBlackJackDrawButtonClicked (View Button) {
+
         player.emptyHand();
         game.playerCardValue = 0;
         dealer.emptyHand();
@@ -52,6 +55,49 @@ public class BlackJackGameActivity extends AppCompatActivity {
             dealerCardValueText.setText("Dealers first card is "
                     + dealer.revealSingleCard(0).getRankNumerically() + ".");
 
+        }
+    }
+
+    public void onTwistButtonClicked (View Button) {
+        if (game.playerCardValue >= 21) {
+            playerCardValueText.setText("You are bust. Press deal to start again.");
+        }
+        else {
+            game.playerTwist();
+            playerCardValueText.setText("Your card total is " + game.playerCardValue
+                    + ". \n What would you like to do?");
+        }
+    }
+
+    public void onStickButtonClicked (View Button) {
+        game.dealersHandLessThan17();
+
+        int result = game.assess();
+
+        String winnerMessage;
+
+        switch (result) {
+            case 0:
+                winnerMessage = "Error";
+                break;
+            case 1:
+                winnerMessage = "You win!";
+                break;
+            case 2:
+                winnerMessage = "Dealer wins! Better luck next time.";
+                break;
+            default:
+                winnerMessage = "Error";
+        }
+
+        playerCardValueText.setText(winnerMessage);
+        if (game.dealerCardValue > 21) {
+            dealerCardValueText.setText("The dealer has "
+                    + game.dealerCardValue + ". The dealer is bust!");
+        }
+        else {
+            dealerCardValueText.setText("The dealer has "
+                    + game.dealerCardValue);
         }
     }
 }
