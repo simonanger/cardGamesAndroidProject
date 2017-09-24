@@ -17,4 +17,9 @@ public class WelcomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, HighCardGameActivity.class);
         startActivity(intent);
     }
+
+    public void onBlackjackButtonClicked(View Button) {
+        Intent intent = new Intent(this, BlackJackGameActivity.class);
+        startActivity(intent);
+    }
 }
