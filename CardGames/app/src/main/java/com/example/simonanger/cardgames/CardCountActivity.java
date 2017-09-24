@@ -39,6 +39,7 @@ public class CardCountActivity extends AppCompatActivity {
     int result;
     int finalAnswer;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +69,7 @@ public class CardCountActivity extends AppCompatActivity {
         answerText = (EditText) findViewById(R.id.cardCountAnswerTextBox);
         cardCountResult = (TextView) findViewById(R.id.cardCountResult);
         answerButton.setVisibility(View.GONE);
+
     }
 
     public void onCardCountButtonClicked(View Button) throws InterruptedException {
@@ -215,6 +217,7 @@ public class CardCountActivity extends AppCompatActivity {
                 cardCountResult.setText("You are correct! Draw again?");
                 answerText.setText("");
                 answerButton.setVisibility(View.GONE);
+
             }
 
             if (result != finalAnswer) {

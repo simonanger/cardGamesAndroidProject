@@ -48,4 +48,5 @@ public class CardCountGame implements Game {
         return totalToGuess;
 
     }
+
 }
