@@ -13,13 +13,13 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
     }
 
-    public void onHighCardButtonClicked(View button) {
+    public void onHighCardButtonClicked(View Button) {
         Intent intent = new Intent(this, HighCardGameActivity.class);
         startActivity(intent);
     }
 
-    public void onBlackjackButtonClicked(View Button) {
-        Intent intent = new Intent(this, BlackJackGameActivity.class);
+    public void onCardCountButtonClicked(View Button) {
+        Intent intent = new Intent(this, CardCountActivity.class);
         startActivity(intent);
     }
 }

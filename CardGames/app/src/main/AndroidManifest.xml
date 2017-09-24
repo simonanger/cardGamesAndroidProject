@@ -22,7 +22,8 @@
             android:name=".HighCardGameActivity"
             android:label="@string/welcome" />
         <activity android:name=".ActivityTest" />
-        <activity android:name=".BlackJackGameActivity"></activity>
+        <activity android:name=".BlackJackGameActivity" />
+        <activity android:name=".CardCountActivity"></activity>
     </application>
 
 </manifest>

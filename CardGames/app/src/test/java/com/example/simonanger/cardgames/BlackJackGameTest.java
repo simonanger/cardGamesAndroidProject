@@ -48,12 +48,12 @@ public class BlackJackGameTest {
     }
 
 //    This tests that the less than 17 method works
-//    @Test
-//    public void testDealerHandLessThan17() {
-//        blackJackGame.draw();
-//        blackJackGame.dealersHandLessThan17();
-//        assertEquals(0, blackJackGame.getDealerCardValue());
-//    }
+    @Test
+    public void testDealerHandLessThan17() {
+        blackJackGame.draw();
+        blackJackGame.dealersHandLessThan17();
+        assertEquals(0, blackJackGame.getDealerCardValue());
+    }
 
     // This tests that the assess method will return a winner
 

@@ -12,4 +12,9 @@
     <string name="blackJackDraw">Draw</string>
     <string name="stick">Stick</string>
     <string name="twist">Twist</string>
+    <string name="cardCount">Card Count</string>
+    <string name="cardCountHint">Answer here!</string>
+    <string name="cardCountDraw">Draw</string>
+    <string name="cardCountAnswer">Answer</string>
+    <string name="cardCountRules">The rules are simple. Press the draw button and you will see the card values for 2 seconds. Count them up and answer in the box below. Remember that all face cards count as 10 and Ace is low!</string>
 </resources>

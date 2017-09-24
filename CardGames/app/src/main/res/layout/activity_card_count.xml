@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.simonanger.cardgames.CardCountActivity"
+    android:background="@drawable/tablefelt">
+
+    <ImageView
+        android:id="@+id/cardCountFirstCardImage"
+        android:layout_width="91dp"
+        android:layout_height="121dp"
+        android:layout_marginBottom="58dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.379"
+        app:srcCompat="@drawable/cardback" />
+
+    <TextView
+        android:id="@+id/cardCountFirstCardRankViewUp"
+        android:layout_width="25dp"
+        android:layout_height="24dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="1dp"
+        android:textAlignment="center"
+        app:layout_constraintRight_toRightOf="@+id/cardCountFirstCardImage"
+        app:layout_constraintTop_toTopOf="@+id/cardCountFirstCardImage" />
+
+    <TextView
+        android:id="@+id/cardCountFirstCardRankViewDown"
+        android:layout_width="25dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="-1dp"
+        android:layout_marginLeft="0dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/cardCountFirstCardImage"
+        app:layout_constraintLeft_toLeftOf="@+id/cardCountFirstCardImage" />
+
+    <ImageView
+        android:id="@+id/cardCountSecondCardImage"
+        android:layout_width="91dp"
+        android:layout_height="121dp"
+        android:layout_marginBottom="58dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.379"
+        app:srcCompat="@drawable/cardback" />
+
+    <TextView
+        android:id="@+id/cardCountSecondCardRankViewUp"
+        android:layout_width="25dp"
+        android:layout_height="24dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="1dp"
+        android:textAlignment="center"
+        app:layout_constraintRight_toRightOf="@+id/cardCountSecondCardImage"
+        app:layout_constraintTop_toTopOf="@+id/cardCountSecondCardImage" />
+
+    <TextView
+        android:id="@+id/cardCountSecondCardRankViewDown"
+        android:layout_width="25dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="-1dp"
+        android:layout_marginLeft="0dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/cardCountSecondCardImage"
+        app:layout_constraintLeft_toLeftOf="@+id/cardCountSecondCardImage" />
+
+    <ImageView
+        android:id="@+id/cardCountThirdCardImage"
+        android:layout_width="91dp"
+        android:layout_height="121dp"
+        android:layout_marginBottom="58dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.379"
+        app:srcCompat="@drawable/cardback"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cardCountThirdCardRankViewUp"
+        android:layout_width="25dp"
+        android:layout_height="24dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="1dp"
+        android:textAlignment="center"
+        app:layout_constraintRight_toRightOf="@+id/cardCountThirdCardImage"
+        app:layout_constraintTop_toTopOf="@+id/cardCountThirdCardImage" />
+
+    <TextView
+        android:id="@+id/cardCountThirdCardRankViewDown"
+        android:layout_width="25dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="-1dp"
+        android:layout_marginLeft="0dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/cardCountThirdCardImage"
+        app:layout_constraintLeft_toLeftOf="@+id/cardCountThirdCardImage" />
+
+    <Button
+        android:id="@+id/cardCountBegin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onCardCountButtonClicked"
+        android:text="@string/cardCountDraw"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.56" />
+
+    <EditText
+        android:id="@+id/cardCountAnswerTextBox"
+        android:layout_width="122dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/cardCountHint"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.793" />
+
+    <Button
+        android:id="@+id/answerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="34dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:onClick="onAnswerButtonClicked"
+        android:text="@string/cardCountAnswer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/cardCountResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="118dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/answerButton"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/cardCountRules"
+        android:layout_width="323dp"
+        android:layout_height="117dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/cardCountRules"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
