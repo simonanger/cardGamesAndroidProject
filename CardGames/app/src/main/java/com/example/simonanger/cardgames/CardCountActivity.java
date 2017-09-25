@@ -269,9 +269,10 @@ public class CardCountActivity extends AppCompatActivity {
     }
 
     public void onAnswerButtonClicked(View Button) {
-        if (answerText.getText().toString() == "") {
+        if (answerText.getText().toString().length() == 0) {
             cardCountResult.setText("Please provide an answer or draw again.");
         }
+
         else {
 
             String answer = answerText.getText().toString();

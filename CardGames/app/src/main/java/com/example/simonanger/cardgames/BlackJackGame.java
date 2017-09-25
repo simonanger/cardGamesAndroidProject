@@ -140,12 +140,6 @@ public class BlackJackGame implements Game {
             int dealersNewCard = dealer.revealSingleCard(dealer.getHand()
                     .size()-1).getRankNumerically();
 
-//            if (dealerCardValue <= 10) {
-//                switch (dealersNewCard) {
-//                    case 1:
-//                        dealersNewCard = 11;
-//                }
-//            }
 
             switch (dealersNewCard) {
                 case 11:

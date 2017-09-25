@@ -59,7 +59,7 @@ public class HighCardGameActivity extends AppCompatActivity {
 
         playersCardImage = (ImageView) findViewById(R.id.playersCardImage);
 
-        ObjectAnimator animatorX = ObjectAnimator.ofFloat(playersCardImage, "x", 420f);
+        ObjectAnimator animatorX = ObjectAnimator.ofFloat(playersCardImage, "x", -160f, 420f);
         animatorX.setDuration(animationDuration);
 
         ObjectAnimator animatorY = ObjectAnimator.ofFloat(playersCardImage, "y", 300f);
@@ -81,7 +81,7 @@ public class HighCardGameActivity extends AppCompatActivity {
 
         dealersCardImage = (ImageView) findViewById(R.id.dealersCardImage);
 
-        ObjectAnimator animatorX2 = ObjectAnimator.ofFloat(dealersCardImage, "x", 420f);
+        ObjectAnimator animatorX2 = ObjectAnimator.ofFloat(dealersCardImage, "x", 1000f, 420f);
         animatorX2.setDuration(animationDuration);
 
         ObjectAnimator animatorY2 = ObjectAnimator.ofFloat(dealersCardImage, "y", 300f);
