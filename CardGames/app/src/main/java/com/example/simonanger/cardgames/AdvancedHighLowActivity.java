@@ -60,11 +60,8 @@ public class AdvancedHighLowActivity extends AppCompatActivity {
 
         playersCardImage = (ImageView) findViewById(R.id.playersCardImage);
 
-        ObjectAnimator animatorX = ObjectAnimator.ofFloat(playersCardImage, "x", -160f, 400f);
+        ObjectAnimator animatorX = ObjectAnimator.ofFloat(playersCardImage, "translationX", -400f, 0);
         animatorX.setDuration(animationDuration);
-
-        ObjectAnimator animatorY = ObjectAnimator.ofFloat(playersCardImage, "y", 300f);
-        animatorY.setDuration(animationDuration);
 
         ObjectAnimator alphaAnimation = ObjectAnimator
                 .ofFloat(playersCardImage, View.ALPHA, 1.0f, 0.0f );
@@ -82,11 +79,8 @@ public class AdvancedHighLowActivity extends AppCompatActivity {
 
         dealersCardImage = (ImageView) findViewById(R.id.dealersCardImage);
 
-        ObjectAnimator animatorX2 = ObjectAnimator.ofFloat(dealersCardImage, "x", 1000f, 400f);
+        ObjectAnimator animatorX2 = ObjectAnimator.ofFloat(dealersCardImage, "translationX", 400f, 0);
         animatorX2.setDuration(animationDuration);
-
-        ObjectAnimator animatorY2 = ObjectAnimator.ofFloat(dealersCardImage, "y", 300f);
-        animatorY2.setDuration(animationDuration);
 
         ObjectAnimator alphaAnimation2 = ObjectAnimator
                 .ofFloat(dealersCardImage, View.ALPHA, 1.0f, 0.0f );

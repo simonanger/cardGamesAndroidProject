@@ -22,7 +22,7 @@
         </activity>
         <activity
             android:name=".AdvancedHighLowActivity"
-            android:label="Higher of Lower?"
+            android:label="Higher or Lower?"
             android:parentActivityName=".WelcomeActivity" />
         <activity
             android:name=".CardCountActivity"

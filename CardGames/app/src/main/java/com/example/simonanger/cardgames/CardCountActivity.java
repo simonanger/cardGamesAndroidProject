@@ -73,11 +73,8 @@ public class CardCountActivity extends AppCompatActivity {
         answerButton.setVisibility(View.GONE);
 
 
-        ObjectAnimator animatorX = ObjectAnimator.ofFloat(cardOne, "x", 100f);
+        ObjectAnimator animatorX = ObjectAnimator.ofFloat(cardOne, "translationX", -400f, 0);
         animatorX.setDuration(animationDuration);
-
-        ObjectAnimator animatorY = ObjectAnimator.ofFloat(cardOne, "y", 300f);
-        animatorY.setDuration(animationDuration);
 
         ObjectAnimator alphaAnimation = ObjectAnimator
                 .ofFloat(cardOne, View.ALPHA, 1.0f, 0.0f );
@@ -93,11 +90,8 @@ public class CardCountActivity extends AppCompatActivity {
         animatorSet.start();
 
 
-        ObjectAnimator animatorX2 = ObjectAnimator.ofFloat(cardTwo, "x", 400f);
+        ObjectAnimator animatorX2 = ObjectAnimator.ofFloat(cardTwo, "translationX", -400f, 0);
         animatorX2.setDuration(animationDuration);
-
-        ObjectAnimator animatorY2 = ObjectAnimator.ofFloat(cardTwo, "y", 300f);
-        animatorY2.setDuration(animationDuration);
 
         ObjectAnimator alphaAnimation2 = ObjectAnimator
                 .ofFloat(cardTwo, View.ALPHA, 1.0f, 0.0f );
@@ -113,11 +107,8 @@ public class CardCountActivity extends AppCompatActivity {
 
 
 
-        ObjectAnimator animatorX3 = ObjectAnimator.ofFloat(cardThree, "x", 700f);
+        ObjectAnimator animatorX3 = ObjectAnimator.ofFloat(cardThree, "translationX", -400f, 0);
         animatorX3.setDuration(animationDuration);
-
-        ObjectAnimator animatorY3 = ObjectAnimator.ofFloat(cardThree, "y", 300f);
-        animatorY3.setDuration(animationDuration);
 
         ObjectAnimator alphaAnimation3 = ObjectAnimator
                 .ofFloat(cardThree, View.ALPHA, 1.0f, 0.0f );
