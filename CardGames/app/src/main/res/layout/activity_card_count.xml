@@ -8,7 +8,7 @@
     android:background="@drawable/tablefelt">
 
     <ImageView
-        android:id="@+id/cardCountFirstCardImage"
+        android:id="@+id/cardCount1"
         android:layout_width="103dp"
         android:layout_height="140dp"
         android:layout_marginBottom="58dp"
@@ -30,11 +30,11 @@
         android:layout_marginRight="3dp"
         android:layout_marginTop="1dp"
         android:textAlignment="center"
-        app:layout_constraintRight_toRightOf="@+id/cardCountFirstCardImage"
-        app:layout_constraintTop_toTopOf="@+id/cardCountFirstCardImage"
+        app:layout_constraintRight_toRightOf="@+id/cardCount1"
+        app:layout_constraintTop_toTopOf="@+id/cardCount1"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/cardCountFirstCardImage"
-        app:layout_constraintBottom_toBottomOf="@+id/cardCountFirstCardImage"
+        app:layout_constraintLeft_toLeftOf="@+id/cardCount1"
+        app:layout_constraintBottom_toBottomOf="@+id/cardCount1"
         android:layout_marginBottom="8dp"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintVertical_bias="0.0" />
@@ -46,11 +46,11 @@
         android:layout_marginBottom="-8dp"
         android:layout_marginLeft="0dp"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/cardCountFirstCardImage"
-        app:layout_constraintLeft_toLeftOf="@+id/cardCountFirstCardImage" />
+        app:layout_constraintBottom_toBottomOf="@+id/cardCount1"
+        app:layout_constraintLeft_toLeftOf="@+id/cardCount1" />
 
     <ImageView
-        android:id="@+id/cardCountSecondCardImage"
+        android:id="@+id/cardCount2"
         android:layout_width="103dp"
         android:layout_height="140dp"
         android:layout_marginBottom="58dp"
@@ -71,8 +71,8 @@
         android:layout_marginRight="0dp"
         android:layout_marginTop="1dp"
         android:textAlignment="center"
-        app:layout_constraintRight_toRightOf="@+id/cardCountSecondCardImage"
-        app:layout_constraintTop_toTopOf="@+id/cardCountSecondCardImage" />
+        app:layout_constraintRight_toRightOf="@+id/cardCount2"
+        app:layout_constraintTop_toTopOf="@+id/cardCount2" />
 
     <TextView
         android:id="@+id/cardCountSecondCardRankViewDown"
@@ -81,11 +81,11 @@
         android:layout_marginBottom="-1dp"
         android:layout_marginLeft="0dp"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/cardCountSecondCardImage"
-        app:layout_constraintLeft_toLeftOf="@+id/cardCountSecondCardImage" />
+        app:layout_constraintBottom_toBottomOf="@+id/cardCount2"
+        app:layout_constraintLeft_toLeftOf="@+id/cardCount2" />
 
     <ImageView
-        android:id="@+id/cardCountThirdCardImage"
+        android:id="@+id/cardCount3"
         android:layout_width="103dp"
         android:layout_height="140dp"
         android:layout_marginBottom="58dp"
@@ -107,8 +107,8 @@
         android:layout_marginRight="0dp"
         android:layout_marginTop="1dp"
         android:textAlignment="center"
-        app:layout_constraintRight_toRightOf="@+id/cardCountThirdCardImage"
-        app:layout_constraintTop_toTopOf="@+id/cardCountThirdCardImage" />
+        app:layout_constraintRight_toRightOf="@+id/cardCount3"
+        app:layout_constraintTop_toTopOf="@+id/cardCount3" />
 
     <TextView
         android:id="@+id/cardCountThirdCardRankViewDown"
@@ -117,8 +117,8 @@
         android:layout_marginBottom="-1dp"
         android:layout_marginLeft="0dp"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/cardCountThirdCardImage"
-        app:layout_constraintLeft_toLeftOf="@+id/cardCountThirdCardImage" />
+        app:layout_constraintBottom_toBottomOf="@+id/cardCount3"
+        app:layout_constraintLeft_toLeftOf="@+id/cardCount3" />
 
     <Button
         android:id="@+id/cardCountBegin"

@@ -11,8 +11,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class CardCountActivity extends AppCompatActivity {
 
     CardCountGame game;
@@ -56,9 +54,9 @@ public class CardCountActivity extends AppCompatActivity {
         game = new CardCountGame(deck, dealer, player);
         result = 0;
 
-        cardOne = (ImageView) findViewById(R.id.cardCountFirstCardImage);
-        cardTwo = (ImageView) findViewById(R.id.cardCountSecondCardImage);
-        cardThree = (ImageView) findViewById(R.id.cardCountThirdCardImage);
+        cardOne = (ImageView) findViewById(R.id.cardCount1);
+        cardTwo = (ImageView) findViewById(R.id.cardCount2);
+        cardThree = (ImageView) findViewById(R.id.cardCount3);
 
         cardOneTextViewUp = (TextView) findViewById(R.id.cardCountFirstCardRankViewUp);
         cardOneTextViewDown = (TextView) findViewById(R.id.cardCountFirstCardRankViewDown);
@@ -136,56 +134,67 @@ public class CardCountActivity extends AppCompatActivity {
 
     }
 
-    public void onCardCountButtonClicked(View Button) throws InterruptedException {
+    public void onCardCountButtonClicked(View button) throws InterruptedException {
 
         player.emptyHand();
 
         result = game.draw();
 
-        switch (player.revealSingleCard(0).getSuit()) {
-            case SPADES:
-                cardOne.setImageResource(R.drawable.spades);
-                break;
-            case CLUBS:
-                cardOne.setImageResource(R.drawable.clubs);
-                break;
-            case DIAMONDS:
-                cardOne.setImageResource(R.drawable.diamonds);
-                break;
-            case HEARTS:
-                cardOne.setImageResource(R.drawable.hearts);
-                break;
+        for (int i = 0; i < player.getHand().size(); i++ ){
+            String currentCardSuit = player.getHand().get(i).getSuit().toString().toLowerCase();
+            int cardImageResource = getResources().getIdentifier(currentCardSuit, "drawable", getPackageName());
+            String currentCardImageResourceName = "cardCount" + String.valueOf(i + 1);
+            int cardImageViewId = getResources().getIdentifier(currentCardImageResourceName, "id", getPackageName());
+            ImageView currentCardImageView = (ImageView) findViewById(cardImageViewId);
+            currentCardImageView.setImageResource(cardImageResource);
         }
 
-        switch (player.revealSingleCard(1).getSuit()) {
-            case SPADES:
-                cardTwo.setImageResource(R.drawable.spades);
-                break;
-            case CLUBS:
-                cardTwo.setImageResource(R.drawable.clubs);
-                break;
-            case DIAMONDS:
-                cardTwo.setImageResource(R.drawable.diamonds);
-                break;
-            case HEARTS:
-                cardTwo.setImageResource(R.drawable.hearts);
-                break;
-        }
+//
+//        switch (player.revealSingleCard(0).getSuit()) {
+//            case SPADES:
+//                cardOne.setImageResource(R.drawable.spades);
+//                break;
+//            case CLUBS:
+//                cardOne.setImageResource(R.drawable.clubs);
+//                break;
+//            case DIAMONDS:
+//                cardOne.setImageResource(R.drawable.diamonds);
+//                break;
+//            case HEARTS:
+//                cardOne.setImageResource(R.drawable.hearts);
+//                break;
+//        }
+//
+//        switch (player.revealSingleCard(1).getSuit()) {
+//            case SPADES:
+//                cardTwo.setImageResource(R.drawable.spades);
+//                break;
+//            case CLUBS:
+//                cardTwo.setImageResource(R.drawable.clubs);
+//                break;
+//            case DIAMONDS:
+//                cardTwo.setImageResource(R.drawable.diamonds);
+//                break;
+//            case HEARTS:
+//                cardTwo.setImageResource(R.drawable.hearts);
+//                break;
+//        }
+//
+//        switch (player.revealSingleCard(2).getSuit()) {
+//            case SPADES:
+//                cardThree.setImageResource(R.drawable.spades);
+//                break;
+//            case CLUBS:
+//                cardThree.setImageResource(R.drawable.clubs);
+//                break;
+//            case DIAMONDS:
+//                cardThree.setImageResource(R.drawable.diamonds);
+//                break;
+//            case HEARTS:
+//                cardThree.setImageResource(R.drawable.hearts);
+//                break;
+//        }
 
-        switch (player.revealSingleCard(2).getSuit()) {
-            case SPADES:
-                cardThree.setImageResource(R.drawable.spades);
-                break;
-            case CLUBS:
-                cardThree.setImageResource(R.drawable.clubs);
-                break;
-            case DIAMONDS:
-                cardThree.setImageResource(R.drawable.diamonds);
-                break;
-            case HEARTS:
-                cardThree.setImageResource(R.drawable.hearts);
-                break;
-        }
 
         if (player.revealSingleCard(0).getRankNumerically() == 1) {
             cardOneTextViewUp.setText("A");

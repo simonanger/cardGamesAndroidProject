@@ -19,7 +19,7 @@ public class Player {
         return name;
     }
 
-    public ArrayList getHand() {
+    public ArrayList<Card> getHand() {
         return hand;
     }
 

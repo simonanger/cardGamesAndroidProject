@@ -35,6 +35,8 @@ public class HighCardGameActivity extends AppCompatActivity {
 
     long animationDuration = 1000;
 
+//    int result;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
