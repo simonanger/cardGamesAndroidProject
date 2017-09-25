@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Card Games</string>
     <string name="welcome">Welcome to the games room!</string>
-    <string name="highCard">High Card</string>
+    <string name="highCard">Higher or Lower?</string>
     <string name="title">Welcome to the games room!</string>
     <string name="dealer">Dealers card</string>
     <string name="player">Your Card</string>

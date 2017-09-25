@@ -14,7 +14,7 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     public void onHighCardButtonClicked(View Button) {
-        Intent intent = new Intent(this, HighCardGameActivity.class);
+        Intent intent = new Intent(this, AdvancedHighLowActivity.class);
         startActivity(intent);
     }
 
@@ -23,8 +23,8 @@ public class WelcomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onAdvancedHLClicked(View button) {
-        Intent intent = new Intent(this, AdvancedHighLowActivity.class);
-        startActivity(intent);
-    }
+//    public void onAdvancedHLClicked(View button) {
+//        Intent intent = new Intent(this, AdvancedHighLowActivity.class);
+//        startActivity(intent);
+//    }
 }

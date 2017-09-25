@@ -21,15 +21,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HighCardGameActivity"
-            android:label="High Card Wins!"
+            android:name=".AdvancedHighLowActivity"
+            android:label="Higher of Lower?"
             android:parentActivityName=".WelcomeActivity" />
-        <activity android:name=".BlackJackGameActivity" />
         <activity
             android:name=".CardCountActivity"
             android:label="Card Count!"
             android:parentActivityName=".WelcomeActivity" />
-        <activity android:name=".AdvancedHighLowActivity"></activity>
     </application>
 
 </manifest>
