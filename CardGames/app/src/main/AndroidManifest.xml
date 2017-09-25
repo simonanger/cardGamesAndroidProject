@@ -4,13 +4,13 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/icon"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:hardwareAccelerated="false"
-        android:largeHeap="true">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".WelcomeActivity"
             android:label="Card Games">
@@ -23,12 +23,13 @@
         <activity
             android:name=".HighCardGameActivity"
             android:label="High Card Wins!"
-            android:parentActivityName=".WelcomeActivity"/>
+            android:parentActivityName=".WelcomeActivity" />
         <activity android:name=".BlackJackGameActivity" />
         <activity
             android:name=".CardCountActivity"
-            android:parentActivityName=".WelcomeActivity"
-            android:label="Card Count!"></activity>
+            android:label="Card Count!"
+            android:parentActivityName=".WelcomeActivity" />
+        <activity android:name=".AdvancedHighLowActivity"></activity>
     </application>
 
 </manifest>

@@ -18,4 +18,7 @@
     <string name="cardCountAnswer">Answer</string>
     <string name="cardCountRules">The rules are simple. Press the draw button and you will see the card values for 2 seconds. Count them up and answer in the box below. Remember that all face cards count as 10 and Ace is low!</string>
     <string name="cardCountScore">Score</string>
+    <string name="AHLdeal">Deal</string>
+    <string name="higher">Higher</string>
+    <string name="lower">Lower</string>
 </resources>

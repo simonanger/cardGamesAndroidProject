@@ -22,4 +22,9 @@ public class WelcomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CardCountActivity.class);
         startActivity(intent);
     }
+
+    public void onAdvancedHLClicked(View button) {
+        Intent intent = new Intent(this, AdvancedHighLowActivity.class);
+        startActivity(intent);
+    }
 }
