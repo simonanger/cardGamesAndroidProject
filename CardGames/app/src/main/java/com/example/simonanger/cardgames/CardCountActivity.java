@@ -58,12 +58,12 @@ public class CardCountActivity extends AppCompatActivity {
         cardTwo = (ImageView) findViewById(R.id.cardCount2);
         cardThree = (ImageView) findViewById(R.id.cardCount3);
 
-        cardOneTextViewUp = (TextView) findViewById(R.id.cardCountFirstCardRankViewUp);
-        cardOneTextViewDown = (TextView) findViewById(R.id.cardCountFirstCardRankViewDown);
-        cardTwoTextViewUp = (TextView) findViewById(R.id.cardCountSecondCardRankViewUp);
-        cardTwoTextViewDown = (TextView) findViewById(R.id.cardCountSecondCardRankViewDown);
-        cardThreeTextViewUp = (TextView) findViewById(R.id.cardCountThirdCardRankViewUp);
-        cardThreeTextViewDown = (TextView) findViewById(R.id.cardCountThirdCardRankViewDown);
+        cardOneTextViewUp = (TextView) findViewById(R.id.cardCountUp1);
+        cardOneTextViewDown = (TextView) findViewById(R.id.cardCountDown1);
+        cardTwoTextViewUp = (TextView) findViewById(R.id.cardCountUp2);
+        cardTwoTextViewDown = (TextView) findViewById(R.id.cardCountDown2);
+        cardThreeTextViewUp = (TextView) findViewById(R.id.cardCountUp3);
+        cardThreeTextViewDown = (TextView) findViewById(R.id.cardCountDown3);
 
         cardCountBeginButton = (Button) findViewById(R.id.cardCountBegin);
         answerButton = (Button) findViewById(R.id.answerButton);
@@ -149,114 +149,33 @@ public class CardCountActivity extends AppCompatActivity {
             currentCardImageView.setImageResource(cardImageResource);
         }
 
-//
-//        switch (player.revealSingleCard(0).getSuit()) {
-//            case SPADES:
-//                cardOne.setImageResource(R.drawable.spades);
-//                break;
-//            case CLUBS:
-//                cardOne.setImageResource(R.drawable.clubs);
-//                break;
-//            case DIAMONDS:
-//                cardOne.setImageResource(R.drawable.diamonds);
-//                break;
-//            case HEARTS:
-//                cardOne.setImageResource(R.drawable.hearts);
-//                break;
-//        }
-//
-//        switch (player.revealSingleCard(1).getSuit()) {
-//            case SPADES:
-//                cardTwo.setImageResource(R.drawable.spades);
-//                break;
-//            case CLUBS:
-//                cardTwo.setImageResource(R.drawable.clubs);
-//                break;
-//            case DIAMONDS:
-//                cardTwo.setImageResource(R.drawable.diamonds);
-//                break;
-//            case HEARTS:
-//                cardTwo.setImageResource(R.drawable.hearts);
-//                break;
-//        }
-//
-//        switch (player.revealSingleCard(2).getSuit()) {
-//            case SPADES:
-//                cardThree.setImageResource(R.drawable.spades);
-//                break;
-//            case CLUBS:
-//                cardThree.setImageResource(R.drawable.clubs);
-//                break;
-//            case DIAMONDS:
-//                cardThree.setImageResource(R.drawable.diamonds);
-//                break;
-//            case HEARTS:
-//                cardThree.setImageResource(R.drawable.hearts);
-//                break;
-//        }
+        for (int i = 0; i < player.getHand().size(); i++ ){
+            int currentCardRank = player.getHand().get(i).getRankNumerically();
+            String currentCardTextResourceNameUp = "cardCountUp" + String.valueOf(i + 1);
+            String currentCardTextResourceNameDown = "cardCountDown" + String.valueOf(i + 1);
+            int cardTextViewIdUp = getResources().getIdentifier(currentCardTextResourceNameUp, "id", getPackageName());
+            int cardTextViewIdDown = getResources().getIdentifier(currentCardTextResourceNameDown, "id", getPackageName());
+            TextView currentCardTextViewUp = (TextView) findViewById(cardTextViewIdUp);
+            TextView currentCardTextViewDown = (TextView) findViewById(cardTextViewIdDown);
+            currentCardTextViewUp.setText(String.valueOf(currentCardRank));
+            currentCardTextViewDown.setText(String.valueOf(currentCardRank));
 
-
-        if (player.revealSingleCard(0).getRankNumerically() == 1) {
-            cardOneTextViewUp.setText("A");
-            cardOneTextViewDown.setText("A");
-        }
-        else if (player.revealSingleCard(0).getRankNumerically() == 11) {
-            cardOneTextViewUp.setText("J");
-            cardOneTextViewDown.setText("J");
-        }
-        else if (player.revealSingleCard(0).getRankNumerically() == 12) {
-            cardOneTextViewUp.setText("Q");
-            cardOneTextViewDown.setText("Q");
-        }
-        else if (player.revealSingleCard(0).getRankNumerically() == 13) {
-            cardOneTextViewUp.setText("K");
-            cardOneTextViewDown.setText("K");
-        }
-        else {
-            cardOneTextViewUp.setText(String.valueOf(player.revealSingleCard(0).getRankNumerically()));
-            cardOneTextViewDown.setText(String.valueOf(player.revealSingleCard(0).getRankNumerically()));
-        }
-
-        if (player.revealSingleCard(1).getRankNumerically() == 1) {
-            cardTwoTextViewUp.setText("A");
-            cardTwoTextViewDown.setText("A");
-        }
-        else if (player.revealSingleCard(1).getRankNumerically() == 11) {
-            cardTwoTextViewUp.setText("J");
-            cardTwoTextViewDown.setText("J");
-        }
-        else if (player.revealSingleCard(1).getRankNumerically() == 12) {
-            cardTwoTextViewUp.setText("Q");
-            cardTwoTextViewDown.setText("Q");
-        }
-        else if (player.revealSingleCard(1).getRankNumerically() == 13) {
-            cardTwoTextViewUp.setText("K");
-            cardTwoTextViewDown.setText("K");
-        }
-        else {
-            cardTwoTextViewUp.setText(String.valueOf(player.revealSingleCard(1).getRankNumerically()));
-            cardTwoTextViewDown.setText(String.valueOf(player.revealSingleCard(1).getRankNumerically()));
-        }
-
-        if (player.revealSingleCard(2).getRankNumerically() == 1) {
-            cardThreeTextViewUp.setText("A");
-            cardThreeTextViewDown.setText("A");
-        }
-        else if (player.revealSingleCard(2).getRankNumerically() == 11) {
-            cardThreeTextViewUp.setText("J");
-            cardThreeTextViewDown.setText("J");
-        }
-        else if (player.revealSingleCard(2).getRankNumerically() == 12) {
-            cardThreeTextViewUp.setText("Q");
-            cardThreeTextViewDown.setText("Q");
-        }
-        else if (player.revealSingleCard(2).getRankNumerically() == 13) {
-            cardThreeTextViewUp.setText("K");
-            cardThreeTextViewDown.setText("K");
-        }
-        else {
-            cardThreeTextViewUp.setText(String.valueOf(player.revealSingleCard(2).getRankNumerically()));
-            cardThreeTextViewDown.setText(String.valueOf(player.revealSingleCard(2).getRankNumerically()));
+            if (player.revealSingleCard(i).getRankNumerically() == 1) {
+                currentCardTextViewUp.setText("A");
+                currentCardTextViewDown.setText("A");
+            }
+            else if (player.revealSingleCard(i).getRankNumerically() == 11) {
+                currentCardTextViewUp.setText("J");
+                currentCardTextViewDown.setText("J");
+            }
+            else if (player.revealSingleCard(i).getRankNumerically() == 12) {
+                currentCardTextViewUp.setText("Q");
+                currentCardTextViewDown.setText("Q");
+            }
+            else if (player.revealSingleCard(i).getRankNumerically() == 13) {
+                currentCardTextViewUp.setText("K");
+                currentCardTextViewDown.setText("K");
+            }
         }
 
         Handler h=new Handler();

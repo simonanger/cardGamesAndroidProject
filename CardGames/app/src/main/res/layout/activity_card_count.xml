@@ -24,23 +24,23 @@
         app:srcCompat="@drawable/cardback" />
 
     <TextView
-        android:id="@+id/cardCountFirstCardRankViewUp"
+        android:id="@+id/cardCountUp1"
         android:layout_width="25dp"
         android:layout_height="24dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="3dp"
         android:layout_marginTop="1dp"
         android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/cardCount1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@+id/cardCount1"
         app:layout_constraintRight_toRightOf="@+id/cardCount1"
         app:layout_constraintTop_toTopOf="@+id/cardCount1"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/cardCount1"
-        app:layout_constraintBottom_toBottomOf="@+id/cardCount1"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/cardCountFirstCardRankViewDown"
+        android:id="@+id/cardCountDown1"
         android:layout_width="25dp"
         android:layout_height="24dp"
         android:layout_marginBottom="-8dp"
@@ -65,7 +65,7 @@
         app:srcCompat="@drawable/cardback" />
 
     <TextView
-        android:id="@+id/cardCountSecondCardRankViewUp"
+        android:id="@+id/cardCountUp2"
         android:layout_width="25dp"
         android:layout_height="24dp"
         android:layout_marginRight="0dp"
@@ -75,7 +75,7 @@
         app:layout_constraintTop_toTopOf="@+id/cardCount2" />
 
     <TextView
-        android:id="@+id/cardCountSecondCardRankViewDown"
+        android:id="@+id/cardCountDown2"
         android:layout_width="25dp"
         android:layout_height="24dp"
         android:layout_marginBottom="-1dp"
@@ -101,7 +101,7 @@
         app:srcCompat="@drawable/cardback" />
 
     <TextView
-        android:id="@+id/cardCountThirdCardRankViewUp"
+        android:id="@+id/cardCountUp3"
         android:layout_width="25dp"
         android:layout_height="24dp"
         android:layout_marginRight="0dp"
@@ -111,7 +111,7 @@
         app:layout_constraintTop_toTopOf="@+id/cardCount3" />
 
     <TextView
-        android:id="@+id/cardCountThirdCardRankViewDown"
+        android:id="@+id/cardCountDown3"
         android:layout_width="25dp"
         android:layout_height="24dp"
         android:layout_marginBottom="-1dp"
