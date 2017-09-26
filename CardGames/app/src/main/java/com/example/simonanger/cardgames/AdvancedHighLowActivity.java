@@ -122,21 +122,11 @@ public class AdvancedHighLowActivity extends AppCompatActivity {
 
         highOrLow.setText(resultMessage);
 
-        switch (player.revealSingleCard(0).getSuit()) {
-            case SPADES:
-                playersCardImage.setImageResource(R.drawable.spades);
-                break;
-            case CLUBS:
-                playersCardImage.setImageResource(R.drawable.clubs);
-                break;
-            case DIAMONDS:
-                playersCardImage.setImageResource(R.drawable.diamonds);
-                break;
-            case HEARTS:
-                playersCardImage.setImageResource(R.drawable.hearts);
-                break;
+        playersCardImage = (ImageView) findViewById(R.id.playersCardImage);
+        String playersCardSuit = game.player.getHand().get(0).getSuitString();
+        int playersCardSuitId = getResources().getIdentifier(playersCardSuit, "drawable", getPackageName());
+        playersCardImage.setImageResource((playersCardSuitId));
 
-        }
 
         if (player.revealSingleCard(0).getRankNumerically() == 1) {
             playerCardTextUp.setText("A");
@@ -191,20 +181,11 @@ public class AdvancedHighLowActivity extends AppCompatActivity {
                 winnerMessage = "Error";
         }
 
-        switch (dealer.revealSingleCard(0).getSuit()) {
-            case SPADES:
-                dealersCardImage.setImageResource(R.drawable.spades);
-                break;
-            case CLUBS:
-                dealersCardImage.setImageResource(R.drawable.clubs);
-                break;
-            case DIAMONDS:
-                dealersCardImage.setImageResource(R.drawable.diamonds);
-                break;
-            case HEARTS:
-                dealersCardImage.setImageResource(R.drawable.hearts);
-                break;
-        }
+        dealersCardImage = (ImageView) findViewById(R.id.dealersCardImage);
+        String dealersCardSuit = game.dealer.revealSingleCard(0).getSuitString();
+        int dealersCardSuitId = getResources().getIdentifier(dealersCardSuit, "drawable", getPackageName());
+        dealersCardImage.setImageResource((dealersCardSuitId));
+
 
         if (dealer.revealSingleCard(0).getRankNumerically() == 1) {
             dealerCardTextUp.setText("A");

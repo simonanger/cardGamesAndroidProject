@@ -25,4 +25,8 @@ public class Card {
         int value = rank.ordinal()+1;
         return value;
     }
+
+    String getSuitString() {
+        return suit.toString().toLowerCase();
+    }
 }
