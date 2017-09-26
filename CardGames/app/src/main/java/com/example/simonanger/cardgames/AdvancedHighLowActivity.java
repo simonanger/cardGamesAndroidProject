@@ -30,6 +30,7 @@ public class AdvancedHighLowActivity extends AppCompatActivity {
     TextView playerCardTextDown;
     TextView dealerCardTextUp;
     TextView dealerCardTextDown;
+    TextView highLowScoreCount;
 
     ImageView playersCardImage;
     ImageView dealersCardImage;
@@ -103,6 +104,8 @@ public class AdvancedHighLowActivity extends AppCompatActivity {
         dealerCardTextDown = (TextView) findViewById(R.id.dealerCardTextDown);
 
         rageButton = (Button) findViewById(R.id.rageButton);
+
+        highLowScoreCount = (TextView) findViewById(R.id.highLowScoreCount);
 
     }
 
@@ -220,6 +223,8 @@ public class AdvancedHighLowActivity extends AppCompatActivity {
 
         higherButton.setVisibility(View.GONE);
         lowerButton.setVisibility(View.GONE);
+
+        highLowScoreCount.setText(String.valueOf(game.playersPoints));
 
         player.emptyHand();
         dealer.emptyHand();

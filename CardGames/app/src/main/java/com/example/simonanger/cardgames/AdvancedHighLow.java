@@ -14,6 +14,8 @@ public class AdvancedHighLow implements Game {
     boolean isHigher;
     boolean playersChoice;
 
+    int playersPoints;
+
         public AdvancedHighLow(Deck deck, PlayingDealer dealer, Player player) {
             this.deck = deck;
             this.dealer = dealer;
@@ -22,6 +24,7 @@ public class AdvancedHighLow implements Game {
             dealerScore = 0;
             this.isHigher = false;
             this.playersChoice = false;
+            playersPoints = 0;
 
         }
 
@@ -77,17 +80,21 @@ public class AdvancedHighLow implements Game {
             }
 
             if (playersChoice == true && isHigher == true) {
+                playersPoints += 1;
                 return 1;
             }
 
             if (playersChoice == false && isHigher == false) {
+                playersPoints += 1;
                 return 1;
             }
 
             if (playersChoice == false && isHigher == true) {
+//                playersPoints -= 1;
                 return 2;
             }
             else {
+//                playersPoints -= 1;
                 return 2;
             }
 
