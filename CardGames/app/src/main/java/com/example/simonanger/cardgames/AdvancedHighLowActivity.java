@@ -112,6 +112,8 @@ public class AdvancedHighLowActivity extends AppCompatActivity {
     public void onAdvancedHLClicked(View button) {
 
         dealerText.setText("");
+        dealerCardTextUp.setText("");
+        dealerCardTextDown.setText("");
         dealersCardImage.setImageResource(R.drawable.cardback);
 
         game.draw();

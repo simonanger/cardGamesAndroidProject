@@ -23,4 +23,5 @@
     <string name="lower">Lower</string>
     <string name="rage">Rage</string>
     <string name="highLowScore">Your score</string>
+    <string name="welcomeCardCount">Card count</string>
 </resources>
