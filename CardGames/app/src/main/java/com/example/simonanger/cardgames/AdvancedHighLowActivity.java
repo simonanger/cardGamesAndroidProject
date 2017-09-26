@@ -123,7 +123,7 @@ public class AdvancedHighLowActivity extends AppCompatActivity {
 
 
         String resultMessage = "You have the " + playerCardRank + " of " + playerCardSuit
-                + ". \n Will your card be higher or lower?";
+                + ". \n Will your card be higher or lower than the dealers?";
 
         highOrLow.setText(resultMessage);
 

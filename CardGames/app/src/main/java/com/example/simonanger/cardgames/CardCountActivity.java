@@ -2,6 +2,7 @@ package com.example.simonanger.cardgames;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.graphics.Typeface;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ public class CardCountActivity extends AppCompatActivity {
     TextView cardThreeTextViewUp;
     TextView cardThreeTextViewDown;
     TextView cardCountResult;
+    TextView cardCountRules;
 
     Button cardCountBeginButton;
     Button answerButton;
@@ -71,6 +73,10 @@ public class CardCountActivity extends AppCompatActivity {
         answerText = (EditText) findViewById(R.id.cardCountAnswerTextBox);
         cardCountResult = (TextView) findViewById(R.id.cardCountResult);
         answerButton.setVisibility(View.GONE);
+
+        cardCountRules = (TextView) findViewById(R.id.cardCountRules);
+        Typeface fontMedium = Typeface.createFromAsset(this.getAssets(), "fonts/opensans.ttf");
+        cardCountRules.setTypeface(fontMedium);
 
 
         ObjectAnimator animatorX = ObjectAnimator.ofFloat(cardOne, "translationX", -400f, 0);
@@ -126,6 +132,8 @@ public class CardCountActivity extends AppCompatActivity {
     }
 
     public void onCardCountButtonClicked(View button) throws InterruptedException {
+
+        cardCountResult.setText("");
 
         player.emptyHand();
 
