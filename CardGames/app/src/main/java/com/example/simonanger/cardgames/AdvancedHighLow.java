@@ -35,6 +35,15 @@ public class AdvancedHighLow implements Game {
         playerScore = player.revealSingleCard(0).getRankNumerically();
         dealerScore = dealer.revealSingleCard(0).getRankNumerically();
 
+        if (dealerScore == playerScore) {
+            dealer.emptyHand();
+            Card newCard = dealer.deal();
+            dealer.getCard(newCard);
+            dealerScore = dealer.revealSingleCard(0).getRankNumerically();
+        }
+
+
+
         if (playerScore == 1) {
             playerScore = 14;
         }
@@ -42,6 +51,8 @@ public class AdvancedHighLow implements Game {
         if (dealerScore == 1) {
             dealerScore = 14;
         }
+
+
 
         return -1;
 
