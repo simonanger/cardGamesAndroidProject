@@ -2,6 +2,7 @@ package com.example.simonanger.cardgames;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,7 @@ public class AdvancedHighLowActivity extends AppCompatActivity {
     Button advancedHLDealButton;
     Button higherButton;
     Button lowerButton;
+    Button rageButton;
 
     TextView highOrLow;
     TextView dealerText;
@@ -99,6 +101,9 @@ public class AdvancedHighLowActivity extends AppCompatActivity {
         playerCardTextDown = (TextView) findViewById(R.id.playerCardTextDown);
         dealerCardTextUp = (TextView) findViewById(R.id.dealerCardTextUp);
         dealerCardTextDown = (TextView) findViewById(R.id.dealerCardTextDown);
+
+        rageButton = (Button) findViewById(R.id.rageButton);
+
     }
 
     public void onAdvancedHLClicked(View button) {
@@ -237,5 +242,10 @@ public class AdvancedHighLowActivity extends AppCompatActivity {
 
         player.emptyHand();
         dealer.emptyHand();
+    }
+
+    public void onRageButtonClicked(View button) {
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.scream);
+        mp.start();
     }
 }
