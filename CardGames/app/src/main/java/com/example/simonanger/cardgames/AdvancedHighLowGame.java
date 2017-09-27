@@ -4,7 +4,7 @@ package com.example.simonanger.cardgames;
  * Created by simonanger on 25/09/2017.
  */
 
-public class AdvancedHighLow implements Game {
+public class AdvancedHighLowGame implements Game {
 
     Deck deck;
     PlayingDealer dealer;
@@ -16,7 +16,7 @@ public class AdvancedHighLow implements Game {
 
     int playersPoints;
 
-        public AdvancedHighLow(Deck deck, PlayingDealer dealer, Player player) {
+        public AdvancedHighLowGame(Deck deck, PlayingDealer dealer, Player player) {
             this.deck = deck;
             this.dealer = dealer;
             this.player = player;

@@ -10,12 +10,14 @@ public class CardCountGame implements Game {
     PlayingDealer dealer;
     Player player;
     int totalToGuess;
+    int answer;
 
     public CardCountGame(Deck deck, PlayingDealer dealer, Player player) {
         this.deck = deck;
         this.dealer = dealer;
         this.player = player;
         totalToGuess = 0;
+        answer = 0;
     }
 
     public int draw() {

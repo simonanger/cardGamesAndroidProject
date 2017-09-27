@@ -10,10 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class AdvancedHighLowActivity extends AppCompatActivity {
-    AdvancedHighLow game;
+    AdvancedHighLowGame game;
 
     Deck deck;
     PlayingDealer dealer;
@@ -47,7 +45,7 @@ public class AdvancedHighLowActivity extends AppCompatActivity {
         deck.generate();
         dealer = new PlayingDealer(deck);
         player = new Player("Classic Harrison");
-        game = new AdvancedHighLow(deck, dealer, player);
+        game = new AdvancedHighLowGame(deck, dealer, player);
 
         advancedHLDealButton = (Button) findViewById(R.id.advancedHLButton);
 
