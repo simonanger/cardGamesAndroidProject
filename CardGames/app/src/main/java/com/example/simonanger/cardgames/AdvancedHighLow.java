@@ -65,41 +65,40 @@ public class AdvancedHighLow implements Game {
 //            return 0;
 //        }
 
-        public int assess() {
+    public String assess() {
 
-            if (playerScore > dealerScore) {
-                isHigher = true;
-            }
-
-            if (playerScore < dealerScore) {
-                isHigher = false;
-            }
-
-            if (playerScore == dealerScore) {
-                isHigher = false;
-            }
-
-            if (playersChoice == true && isHigher == true) {
-                playersPoints += 1;
-                return 1;
-            }
-
-            if (playersChoice == false && isHigher == false) {
-                playersPoints += 1;
-                return 1;
-            }
-
-            if (playersChoice == false && isHigher == true) {
-//                playersPoints -= 1;
-                return 2;
-            }
-            else {
-//                playersPoints -= 1;
-                return 2;
-            }
-
-
+        if (playerScore > dealerScore) {
+            isHigher = true;
         }
+
+        if (playerScore < dealerScore) {
+            isHigher = false;
+        }
+
+        if (playerScore == dealerScore) {
+            isHigher = false;
+        }
+
+        if (playersChoice == true && isHigher == true) {
+            playersPoints += 1;
+            return "You're right. You win!";
+        }
+
+        if (playersChoice == false && isHigher == false) {
+            playersPoints += 1;
+            return "You're right. You win!";
+        }
+
+        if (playersChoice == false && isHigher == true) {
+//                playersPoints -= 1;
+            return "Better luck next time!";
+        }
+        else {
+//                playersPoints -= 1;
+            return "Better luck next time!";
+        }
+
+    }
 
 
     }

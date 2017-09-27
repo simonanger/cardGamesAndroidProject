@@ -168,23 +168,7 @@ public class AdvancedHighLowActivity extends AppCompatActivity {
         }
 
 
-        int result = game.assess();
-
-        String winnerMessage;
-
-        switch (result) {
-            case 0:
-                winnerMessage = "Error";
-                break;
-            case 1:
-                winnerMessage = "You're right. You win!";
-                break;
-            case 2:
-                winnerMessage = "Better luck next time!";
-                break;
-            default:
-                winnerMessage = "Error";
-        }
+        String result = game.assess();
 
         dealersCardImage = (ImageView) findViewById(R.id.dealersCardImage);
         String dealersCardSuit = game.dealer.revealSingleCard(0).getSuitString();
@@ -221,7 +205,7 @@ public class AdvancedHighLowActivity extends AppCompatActivity {
 
         dealerText.setText(dealersInfo);
 
-        highOrLow.setText(winnerMessage);
+        highOrLow.setText(result);
 
         higherButton.setVisibility(View.GONE);
         lowerButton.setVisibility(View.GONE);
